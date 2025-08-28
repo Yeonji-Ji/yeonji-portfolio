@@ -1,36 +1,29 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding-top: 100px;
+  padding-top: 100px; 
   background-color: #f9f9f9;
   color: #333;
 }
 
-
-main, section, footer {
-  max-width: 900px;
-  margin: 0 auto; 
-  padding: 1rem 2rem;
+section, footer {
+  padding: 1rem 5%;
 }
 
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;        
+  right: 0;
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 5%; 
   z-index: 1000;
   box-sizing: border-box;
-}
-
-.navbar > * {
-  flex: 1; 
 }
 
 .navbar nav a {
