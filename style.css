@@ -1,10 +1,18 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding-top: 80px;
+  padding-top: 100px;
   background-color: #f9f9f9;
   color: #333;
 }
+
+
+main, section, header, footer {
+  max-width: 900px;
+  margin: 0 auto; 
+  padding: 1rem 2rem;
+}
+
 
 .navbar {
   position: fixed;
@@ -26,7 +34,6 @@ body {
   font-weight: bold;
 }
 
-body {
-  margin: 0;
-  padding-top: 80px; /* for navbar spacing */
+h1, h2, h3 {
+  text-align: center;
 }
