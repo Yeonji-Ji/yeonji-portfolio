@@ -13,18 +13,12 @@ main, section, footer {
   padding: 1rem 2rem;
 }
 
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
+.navbar .container {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
-  z-index: 1000;
 }
 
 .navbar nav a {
