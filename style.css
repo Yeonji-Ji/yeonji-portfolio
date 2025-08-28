@@ -7,7 +7,9 @@ body {
 }
 
 section, footer {
-  padding: 1rem 5%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 
 .navbar {
@@ -19,27 +21,31 @@ section, footer {
   background-color: #ffffff;
   border-bottom: 1px solid #ccc;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0.8rem 5%; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 5%;
   z-index: 1000;
   box-sizing: border-box;
 }
 
+.navbar-left {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
 .navbar h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .navbar .subtitle {
-  margin: 0.2rem 0;
-  font-size: 0.9rem;   
-  color: #666; 
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.nav-links {
-  margin-top: 0.3rem;
-}
+
 
 .nav-links a {
   margin: 0 0.6rem;
