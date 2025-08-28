@@ -13,12 +13,24 @@ main, section, footer {
   padding: 1rem 2rem;
 }
 
-.navbar .container {
-  max-width: 900px;
-  margin: 0 auto;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;        
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.8rem 2rem;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbar > * {
+  flex: 1; 
 }
 
 .navbar nav a {
