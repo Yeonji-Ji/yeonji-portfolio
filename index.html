@@ -14,14 +14,19 @@
     </div>
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#MLprojects">ML Projects</a>
-      <a href="#research">Research Projects</a>
+      <a href="#MLprojects">Projects</a>
+      <a href="skills">Skiils</a>
+      <a href="experience">Experiences</a>
+      <a href="research">Research & Publication</a>
+      <a href="extra">Extra</a>
+
       <a href="#publications">Publications</a>
       <a href="#presentations">Presentations</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
+  
 
   <section id="about">
     <h2>About Me</h2>
@@ -36,21 +41,143 @@
     </p>
   </section>
 
-  <section id="MLprojects">
-    <h2>Machine Learning Projects</h2>
+<section id="MLprojects">
+  <h2>Machine Learning Projects</h2>
 
-    <div class="project">
-      <h3><a href="https://github.com/Yeonji-Ji/amazon-reviews-tfidf-sentiment">Amazon Review Sentiment Classification</a> (2025)</h3>
-      <p>Built a text classification pipeline using TF-IDF with Logistic Regression/XGBoost; feature engineering, tuning, and evaluation on 3M+ reviews. Reproducible code on GitHub.</p>
-      <a href="https://github.com/Yeonji-Ji/amazon-reviews-tfidf-sentiment">GitHub Repo</a>
+  <!-- Amazon: 간단 개선 카드 -->
+  <article class="project-card">
+    <header class="project-header">
+      <h3>
+        <a href="https://github.com/Yeonji-Ji/amazon-reviews-tfidf-sentiment" target="_blank" rel="noopener">
+          Amazon Review Sentiment Classification
+        </a>
+        <span class="year">2025</span>
+      </h3>
+      <div class="tags">
+        <span>Text Mining</span><span>TF-IDF</span><span>LogReg/XGBoost</span><span>3M+ Reviews</span>
+      </div>
+    </header>
+    <p>
+      Built an end-to-end sentiment pipeline using TF-IDF with Logistic Regression/XGBoost.
+      Performed feature engineering, hyperparameter tuning, and large-scale evaluation on 3M+ reviews.
+    </p>
+    <div class="links">
+      <a class="btn" href="https://github.com/Yeonji-Ji/amazon-reviews-tfidf-sentiment" target="_blank" rel="noopener">GitHub Repo</a>
+    </div>
+  </article>
+
+    <!-- Retail SQL Analytics: 새 카드 -->
+  <article class="project-card">
+    <header class="project-header">
+      <h3>
+        <a href="https://github.com/Yeonji-Ji/sql-retail-analytics" target="_blank" rel="noopener">
+          Retail E-commerce SQL Analytics
+        </a>
+        <span class="year">2025</span>
+      </h3>
+      <div class="tags">
+        <span>SQL</span><span>SQLite</span><span>Data Cleaning</span><span>Visualization</span>
+      </div>
+    </header>
+    <p>
+      Designed a reproducible SQL analytics pipeline on UK Online Retail data.
+      Built clean marts, monthly revenue dashboards, Top-N customer/product insights,
+      and new vs. returning customer retention analysis. Delivered CSV outputs and key charts.
+    </p>
+    <figure class="project-figure">
+      <img src="image/fig_monthly_revenue.png" alt="Monthly Revenue Trend from Retail SQL Analytics project">
+      <figcaption>Monthly revenue trend highlighting strong Q4 seasonality</figcaption>
+    </figure>
+    <div class="links">
+      <a class="btn" href="https://github.com/Yeonji-Ji/sql-retail-analytics" target="_blank" rel="noopener">GitHub Repo</a>
+    </div>
+  </article>
+
+  <!-- Telco: 상세 카드 (비즈니스 맥락 + 시각 요소 + 세부 내용) -->
+  <article class="project-card highlight">
+    <header class="project-header">
+      <h3>
+        <a href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction" target="_blank" rel="noopener">
+          Telco Customer Churn Prediction
+        </a>
+        <span class="year">2025</span>
+      </h3>
+      <div class="tags">
+        <span>Churn</span><span>Imbalanced Data</span><span>SMOTE</span><span>XGBoost</span><span>Logistic Regression</span>
+        <span>Random Forest</span><span>EDA</span><span>Feature Engineering</span>
+      </div>
+    </header>
+
+    <!-- 비주얼: 파이프라인 다이어그램 -->
+    <figure class="project-figure">
+      <img src="image/" alt="Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation" />
+      <figcaption>Pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation</figcaption>
+    </figure>
+
+    <!-- 핵심 요약 (비즈니스 임팩트 중심) -->
+    <ul class="bullets">
+      <li><strong>Goal:</strong> Identify high-risk customers early to guide retention campaigns and reduce churn.</li>
+      <li><strong>Data:</strong> 7k+ customer records with plan/contract/payment/service features; label: churn (yes/no).</li>
+      <li><strong>Approach:</strong> EDA → categorical encoding & usage-based features (tenure buckets, service bundles) → models (LogReg/RF/XGB) → SMOTE for imbalance → threshold tuning.</li>
+      <li><strong>Evaluation:</strong> Compare <em>Recall/AUC</em> across models; select business-friendly operating point for retention budget.</li>
+      <li><strong>Outcome:</strong> (예: placeholder) XGBoost AUC ↑ to 0.85; recall at 0.77 with precision trade-off optimized for campaign cost.</li>
+    </ul>
+
+    <!-- 인사이트 시각화: 썸네일 3개 그리드 -->
+    <div class="thumb-grid">
+      <figure>
+        <img src="image/telco_feature_importance.png" alt="Feature importance bar chart" />
+        <figcaption>Top Features (e.g., contract type, monthly charges, tenure)</figcaption>
+      </figure>
+      <figure>
+        <img src="image/telco_churn_by_segment.png" alt="Churn rate by segment plot" />
+        <figcaption>Churn by Segment (e.g., month-to-month vs two-year)</figcaption>
+      </figure>
+      <figure>
+        <img src="image/telco_model_metrics.png" alt="Model comparison table/ROC curves" />
+        <figcaption>Model Comparison (ROC / AUC / Recall)</figcaption>
+      </figure>
     </div>
 
-    <div class="project">
-      <h3><a href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction">Telco Customer Churn Prediction</a> (2025)</h3>
-      <p>Developed churn models (Logistic Regression, Random Forest, XGBoost); applied SMOTE for class imbalance and engineered usage-based features. Reproducible workflow on GitHub.</p>
-      <a href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction">GitHub Repo</a>
+    <!-- 접었다 펼치는 상세: 데이터/모델링/재현성 -->
+    <details class="more">
+      <summary>Details (Data, Modeling, Reproducibility)</summary>
+      <div class="cols">
+        <div>
+          <h4>Data & EDA</h4>
+          <ul>
+            <li>Handled missing values; normalized numeric; encoded categorical (one-hot/ordinal).</li>
+            <li>Explored churn distribution by service bundle (Fiber, TechSupport, OnlineSecurity).</li>
+            <li>Created features: <code>tenure_bin</code>, <code>charges_per_service</code>, <code>contract_risk</code>.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Modeling & Tuning</h4>
+          <ul>
+            <li>Baselines (LogReg) → tree models (RF/XGBoost) with randomized/grid search.</li>
+            <li>Imbalance handling: <code>SMOTE</code>, class weights, threshold optimization for recall.</li>
+            <li>Metrics: AUC/ROC, Recall@Policy (budget-constrained targeting), PR curve.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Reproducibility</h4>
+          <ul>
+            <li>Clear train/validation/test split; random seeds pinned.</li>
+            <li>Modular scripts/notebooks; requirements pinned in <code>requirements.txt</code>.</li>
+            <li>Plots saved to <code>assets/</code>; results summary table exported as HTML/PNG.</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <div class="links">
+      <a class="btn" href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction" target="_blank" rel="noopener">GitHub Repo</a>
+      <!-- 필요 시 Demo/Report 링크 추가 -->
+      <!-- <a class="btn secondary" href="https://your-demo-or-report-link" target="_blank" rel="noopener">Live Demo / Report</a> -->
     </div>
-  </section>
+  </article>
+</section>
+
 
   <section id="research">
     <h2>Scientific Research Projects</h2>
@@ -73,23 +200,38 @@
       <li>
         Ji Y. et al., “Solvation Thermodynamic Costs of Cognate Binding Site Formation,”
         <i>Journal of Chemical Information and Modeling</i>, 2025.
+        <img src="img/paper1.jpg" alt="Paper1 Abstract" class="paper-pic1" />
         [<a href="https://doi.org/10.1021/acs.jcim.5c01432">DOI</a>]
       </li>
       <li>
         Olson B. et al., “Solvation Maps of SARS-CoV-2 Targets,”
         <i>Journal of Computer-Aided Molecular Design</i>, 2020.
+        <img src="img/paper2.jpg" alt="Paper2 Abstract" class="paper-pic2" />
         [<a href="https://doi.org/10.1007/s10822-020-00341-x">DOI</a>]
       </li>
     </ul>
   </section>
 
-  <section id="presentations">
-    <h2>Presentations</h2>
+  <section id="extra">
+    <h2>Extra</h2>
+    <div class="certificats">
+    <ul>
+      <li>
+        Python for Machine Learning and Data Science Masterclass (Udemy) <i>2024</i>
+        Supervised/unsupervised ML, PCA, model evaluation
+      </li>
+      <li>
+        Deep Learning Specialization (Coursera) <i>2024</i>
+        Neural networks (CNN, RNN, LSTM, etc.), optimization, project structuring
+      </li>
+    </ul>
+    </div>
+    <div class="awards">
     <ul>
       <li>OpenEye CUP 2025 – Poster: Solvation Energetic Costs</li>
       <li>ACS Spring 2024 – Poster: Thermodynamic Mapping</li>
-      <li><img src="img/poster.jpg" alt="Poster Image" class="poster-thumb" /></li>
     </ul>
+    </div>
   </section>
 
   <section id="resume">
