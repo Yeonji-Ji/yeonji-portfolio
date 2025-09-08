@@ -40,7 +40,8 @@
       <h3>Education</h3>
       <ul>
         <li><strong>Ph.D. in Biochemistry</strong>, The Graduate Center, City University of New York, [2018-2024]</li>
-        <li><strong>B.S. in Biochemistry</strong>, Kyung Hee University, Seoul, [2012-2017]</li>
+        <br>
+        <li><strong>B.S. in Chemistry</strong>, Kyung Hee University, Seoul, [2012-2017]</li>
       </ul>
   </section>
 <br><br>
@@ -58,18 +59,21 @@
           <div class="links">
             <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub Repo</a>
           </div>
+          <br>
           <!-- Key words -->
           <div class="tags">
-          <span style="background-color:#fff5b1"> Matrix Factorization </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> SVD </span> &nbsp;&nbsp;
-          <span style="background-color:#fff5b1"> Hybrid Ranking </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> LightGBM </span> &nbsp;&nbsp;
-          <span style="background-color:#fff5b1"> Feature Engineering </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> EDA </span> &nbsp;&nbsp;
-          <span style="background-color:#fff5b1"> Precision </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> Recall </span> &nbsp;&nbsp;
-          <span style="background-color:#fff5b1"> NDCG </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> Recommendation </span>
+          <span style="background-color:#fff5b1"> Matrix Factorization </span> &nbsp; <span style="background-color:#c0ed9e"> SVD </span> &nbsp;
+          <span style="background-color:#fff5b1"> Hybrid Ranking </span> &nbsp; <span style="background-color:#c0ed9e"> LightGBM </span> &nbsp;
+          <span style="background-color:#fff5b1"> Feature Engineering </span> &nbsp; <span style="background-color:#c0ed9e"> EDA </span> &nbsp;
+          <span style="background-color:#fff5b1"> Precision </span> &nbsp; <span style="background-color:#c0ed9e"> Recall </span> &nbsp;
+          <span style="background-color:#fff5b1"> NDCG </span> &nbsp; <span style="background-color:#c0ed9e"> Recommendation </span>
           </div>
         </header>
         <!-- Pipeline Figure -->
         <figure class="project-figure">
-          <img src="image/diagram/Movielens25M.drawio.png" alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation" />
+          <img src="image/diagram/Movielens25M.drawio.png" 
+               alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation"
+               style="width: 100%; height: auto;"  />
           <figcaption>Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation</figcaption>
         </figure>
         <!-- Project Summry -->
@@ -77,10 +81,12 @@
           <li><strong>Goal:</strong> Generate personalized movie recommendation lists based on movie features and customer preferences</li>
           <li><strong>Data:</strong> MovieLens rating (25,000,095) data combined with movie metadata (genres, popularity, quality, recency)</li>
           <li><strong>Approach:</strong>
-            <li><strong>EDA & Preprocessing:</strong> Filter ratings after 2015 and apply 10-core filtering</li>
-            <li><strong>Feature Engineering:</strong> Built user and item features including genres, popularity (#ratings), quality (mean rating), and recency</li>
-            <li><strong>Baseline:</strong> Applied Matrix Factorization (SVD) to learn user & item embeddings and generate Top-K candidates</li>
-            <li><strong>Hybrid Model:</strong> Combined MF scores with content-based features and trained a ranking model using LightGBM</li>
+            <ul>
+              <li><strong>EDA & Preprocessing:</strong> Filter ratings after 2015 and apply 10-core filtering</li>
+              <li><strong>Feature Engineering:</strong> Built user and item features including genres, popularity (#ratings), quality (mean rating), and recency</li>
+              <li><strong>Baseline:</strong> Applied Matrix Factorization (SVD) to learn user & item embeddings and generate Top-K candidates</li>
+              <li><strong>Hybrid Model:</strong> Combined MF scores with content-based features and trained a ranking model using LightGBM</li>
+            </ul>
           </li>
           <li><strong>Evaluation:</strong> Assessed models using <em>Precision</em>, <em>Recall</em>Recall, and <em>NDCG</em>NDCG metrics</li>
           <li><strong>Outcome:</strong> The hybrid model achieved modest but consistent gains over the MF baseline in several key metrics (Precision@10/20, Recall@5/10/20, NDCG@20)</li>
@@ -110,10 +116,11 @@
           <div class="links">
             <a class="btn" href="https://github.com/Yeonji-Ji/sql-retail-analytics" target="_blank" rel="noopener">GitHub Repo</a>
           </div>
+          <br>
           <!-- Key words -->
           <div class="tags">
-            <span style="background-color:#fff5b1"> SQL </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> SQLite </span> &nbsp;&nbsp;
-            <span style="background-color:#fff5b1"> Data Cleaning </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> Visualization </span>
+            <span style="background-color:#fff5b1"> SQL </span> &nbsp; <span style="background-color:#c0ed9e"> SQLite </span> &nbsp;
+            <span style="background-color:#fff5b1"> Data Cleaning </span> &nbsp; <span style="background-color:#c0ed9e"> Visualization </span>
           </div>
         </header>
         <!-- Project Summry -->
@@ -158,10 +165,10 @@
           </div>
           <!-- Key words -->
           <div class="tags">
-            <span style="background-color:#fff5b1"> Churn </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> Imbalanced Data </span> &nbsp;&nbsp;
-            <span style="background-color:#fff5b1"> SMOTE </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> XGBoost </span> &nbsp;&nbsp;
-            <span style="background-color:#fff5b1"> Logistic Regression </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> Random Forest </span> &nbsp;&nbsp;
-            <span style="background-color:#fff5b1"> EDA </span> &nbsp;&nbsp; <span style="background-color:#92edc4"> Feature Engineering </span>
+            <span style="background-color:#fff5b1"> Churn </span> &nbsp; <span style="background-color:#c0ed9e"> Imbalanced Data </span> &nbsp;
+            <span style="background-color:#fff5b1"> SMOTE </span> &nbsp; <span style="background-color:#c0ed9e"> XGBoost </span> &nbsp;
+            <span style="background-color:#fff5b1"> Logistic Regression </span> &nbsp; <span style="background-color:#c0ed9e"> Random Forest </span> &nbsp;
+            <span style="background-color:#fff5b1"> EDA </span> &nbsp; <span style="background-color:#c0ed9e"> Feature Engineering </span>
           </div>
         </header>
 
