@@ -18,7 +18,7 @@ footer {
 
 h2 {
   text-align: left;
-  font-size: 1.8rem;   /* 1rem = 보통 16px, 따라서 2rem ≈ 32px */
+  font-size: 1.6rem;   /* 1rem = 보통 16px, 따라서 2rem ≈ 32px */
 }
 
 h3 {
@@ -52,7 +52,7 @@ h3 {
 
 .navbar h1 {
   margin: 0;
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   color: #f6ecdd;
 }
 
@@ -75,7 +75,7 @@ h3 {
 ========================= */
 .tight {
   margin: 0;
-  line-height: 1.5; /* 줄 간격 */
+  line-height: 1.8; /* 줄 간격 */
 }
 
 /* =========================
@@ -116,6 +116,15 @@ h3 {
 }
 
 .year {
+  font-size: 0.9rem;
+  color: #667085;
+  font-weight: 500;
+  background: #eef2ff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+}
+
+.place {
   font-size: 0.9rem;
   color: #667085;
   font-weight: 500;
