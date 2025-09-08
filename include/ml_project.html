@@ -1,193 +1,188 @@
 <section id="MLprojects">
-    <h2>Machine Learning Projects</h2>
+  <article class="project-card">
     <!-- PROJECT 1) MOVIELENS 25M RECOMMENDATION -->
-      <article class="project-card">
-        <header class="project-header">
-          <h3>
-            Enhancing Movie Recommendations: From Matrix Factorization to Hybrid Ranking&nbsp;&nbsp;
-            <span class="year">(2025)</span>
-          </h3>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub Repo</a>
-          </div>
-          <br>
-          <!-- Key words -->
-          <div class="tags">
-          <span style="background-color:#f6cbe3"> Matrix Factorization </span> &nbsp; <span style="background-color:#bbf2d6"> SVD </span> &nbsp;
-          <span style="background-color:#f6cbe3"> Hybrid Ranking </span> &nbsp; <span style="background-color:#bbf2d6"> LightGBM </span> &nbsp;
-          <span style="background-color:#f6cbe3"> Feature Engineering </span> &nbsp; <span style="background-color:#bbf2d6"> EDA </span> &nbsp;
-          <span style="background-color:#f6cbe3"> Precision </span> &nbsp; <span style="background-color:#bbf2d6"> Recall </span> &nbsp;
-          <span style="background-color:#f6cbe3"> NDCG </span> &nbsp; <span style="background-color:#bbf2d6"> Recommendation </span>
-          </div>
-          <br>
-          <!-- Pipeline Figure -->
-          <figure class="project-figure">
-            <img src="image/diagram/Movielens25M.drawio.png" 
-                alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation"
-                style="width: 100%; height: auto;"  />
-            <figcaption>Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation</figcaption>
-          </figure>
-          <br>
-          <!-- Project Summry -->
-          <ul class="bullets">
-            <li><strong>Goal:</strong> Generate personalized movie recommendation lists based on movie features and customer preferences</li>
-            <li><strong>Data:</strong> MovieLens rating (25,000,095) data combined with movie metadata (genres, popularity, quality, recency)</li>
-            <li><strong>Approach:</strong>
-              <ul>
-                <li><strong>EDA & Preprocessing:</strong> Filter ratings after 2015 and apply 10-core filtering</li>
-                <li><strong>Feature Engineering:</strong> Built user and item features including genres, popularity (#ratings), quality (mean rating), and recency</li>
-                <li><strong>Baseline:</strong> Applied Matrix Factorization (SVD) to learn user & item embeddings and generate Top-K candidates</li>
-                <li><strong>Hybrid Model:</strong> Combined MF scores with content-based features and trained a ranking model using LightGBM</li>
-              </ul>
-            </li>
-            <li><strong>Evaluation:</strong> Assessed models using <em>Precision</em>, <em>Recall</em>Recall, and <em>NDCG</em>NDCG metrics</li>
-            <li><strong>Outcome:</strong> The hybrid model achieved modest but consistent gains over the MF baseline in several key metrics (Precision@10/20, Recall@5/10/20, NDCG@20)</li>
-          </ul>
+    <h2>Machine Learning Projects</h2>
+      <header class="project-header">
+        <h3>
+          Movie Recommendations: From Matrix Factorization to Hybrid Ranking&nbsp;&nbsp;
+          <span class="year">(2025)</span>
+        </h3>
+        <!-- Github link -->
+        <div class="links">
+          <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+        <br>
+        <!-- Key words -->
+        <div class="tags">
+        <span style="background-color:#f6cbe3"> Matrix Factorization </span> &nbsp; <span style="background-color:#bbf2d6"> SVD </span> &nbsp;
+        <span style="background-color:#f6cbe3"> Hybrid Ranking </span> &nbsp; <span style="background-color:#bbf2d6"> LightGBM </span> &nbsp;
+        <span style="background-color:#f6cbe3"> Feature Engineering </span> &nbsp; <span style="background-color:#bbf2d6"> EDA </span> &nbsp;
+        <span style="background-color:#f6cbe3"> Precision </span> &nbsp; <span style="background-color:#bbf2d6"> Recall </span> &nbsp;
+        <span style="background-color:#f6cbe3"> NDCG </span> &nbsp; <span style="background-color:#bbf2d6"> Recommendation </span>
+        </div>
+        <br>
+        <!-- Pipeline Figure -->
+        <figure class="project-figure">
+          <img src="image/diagram/Movielens25M.drawio.png" 
+              alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation"
+              style="width: 100%; height: auto;"  />
+          <figcaption>Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation</figcaption>
+        </figure>
+        <br>
+        <!-- Project Summry -->
+        <ul class="bullets">
+          <li><strong>Goal:</strong> Generate personalized movie recommendation lists based on movie features and customer preferences</li>
+          <li><strong>Data:</strong> MovieLens rating (25,000,095) data combined with movie metadata (genres, popularity, quality, recency)</li>
+          <li><strong>Approach:</strong>
+            <ul>
+              <li><strong>EDA & Preprocessing:</strong> Filter ratings after 2015 and apply 10-core filtering</li>
+              <li><strong>Feature Engineering:</strong> Built user and item features including genres, popularity (#ratings), quality (mean rating), and recency</li>
+              <li><strong>Baseline:</strong> Applied Matrix Factorization (SVD) to learn user & item embeddings and generate Top-K candidates</li>
+              <li><strong>Hybrid Model:</strong> Combined MF scores with content-based features and trained a ranking model using LightGBM</li>
+            </ul>
+          </li>
+          <li><strong>Evaluation:</strong> Assessed models using <em>Precision</em>, <em>Recall</em>Recall, and <em>NDCG</em>NDCG metrics</li>
+          <li><strong>Outcome:</strong> The hybrid model achieved modest but consistent gains over the MF baseline in several key metrics (Precision@10/20, Recall@5/10/20, NDCG@20)</li>
+        </ul>
 
-          <p>
-            Business Insight: 
-            By combining features like popularity, genres and recency, the hybrid model captures both individual tastes and trending content, 
-            helping platforms keep recommendations both personalized and timely.
-          </p>
-          <figure class="project-figure">
-          <img src="image/movielens-25m-recsys/movielens25m-fig_metrics_mf_vs_hybrid.png" alt="MF vs. Hybrid" style="width:100%; height:auto;">
-          <figcaption>Monthly Revenue Trend</figcaption>
-          </figure>
-        </header>
-      </article>
+        <p>
+          Business Insight: 
+          By combining features like popularity, genres and recency, the hybrid model captures both individual tastes and trending content, 
+          helping platforms keep recommendations both personalized and timely.
+        </p>
+        <figure class="project-figure">
+        <img src="image/movielens-25m-recsys/movielens25m-fig_metrics_mf_vs_hybrid.png" alt="MF vs. Hybrid" style="width:100%; height:auto;">
+        <figcaption>Monthly Revenue Trend</figcaption>
+        </figure>
+      </header>
 
 
       <!-- PROJECT 2) SQL DATA E-COMMERCE -->
-      <article class="project-card">
-        <header class="project-header">
-          <h3>
-            Retail E-commerce SQL Analytics&nbsp;&nbsp;
-            <span class="year">(2025)</span>
-          </h3>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/sql-retail-analytics" target="_blank" rel="noopener">GitHub Repo</a>
-          </div>
-          <br>
-          <!-- Key words -->
-          <div class="tags">
-            <span style="background-color:#fff5b1"> SQL </span> &nbsp; <span style="background-color:#c0ed9e"> SQLite </span> &nbsp;
-            <span style="background-color:#fff5b1"> Data Cleaning </span> &nbsp; <span style="background-color:#c0ed9e"> Visualization </span>
-          </div>
-          <br>
-        <!-- Project Summry -->
-          <ul class="bullets">
-            <li><strong>Goal:</strong> Designed a reproducible SQL analytics pipeline on UK Online Retail data</li>
-            <li><strong>Approach:</strong> Built clean data, monthly revenue dashboards, Top-N customer/product insights, and new vs. returning customer retention analysis</li>
-            <li><strong>Outcome:</strong>
-              <li>Strong <strong>seasonality</strong> with Q4 spikes</li>
-              <li><strong>Pareto effect</strong>: Top ~10% customers generate ~60% revenue</li>
-              <li>Returning customers drive consistent revenue, highlighting <strong>retention</strong> as a key business driver</li>
-              <li>Certain countries outperform, suggesing <strong>geography targeted marketing</strong> potential</li>
-            </li>
-          </ul>
-          <figure class="project-figure">
-            <img src="image/sql-ecommerce/sql-ecommerce-fig_monthly_revenue.png" alt="Monthly Revenue Trend" style="max-width:450px; width:100%; height:auto;">
-            <figcaption>Monthly Revenue Trend</figcaption>
-          </figure>
+      <header class="project-header">
+        <h3>
+          Retail E-commerce SQL Analytics&nbsp;&nbsp;
+          <span class="year">(2025)</span>
+        </h3>
+        <!-- Github link -->
+        <div class="links">
+          <a class="btn" href="https://github.com/Yeonji-Ji/sql-retail-analytics" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+        <br>
+        <!-- Key words -->
+        <div class="tags">
+          <span style="background-color:#fff5b1"> SQL </span> &nbsp; <span style="background-color:#c0ed9e"> SQLite </span> &nbsp;
+          <span style="background-color:#fff5b1"> Data Cleaning </span> &nbsp; <span style="background-color:#c0ed9e"> Visualization </span>
+        </div>
+        <br>
+      <!-- Project Summry -->
+        <ul class="bullets">
+          <li><strong>Goal:</strong> Designed a reproducible SQL analytics pipeline on UK Online Retail data</li>
+          <li><strong>Approach:</strong> Built clean data, monthly revenue dashboards, Top-N customer/product insights, and new vs. returning customer retention analysis</li>
+          <li><strong>Outcome:</strong>
+            <li>Strong <strong>seasonality</strong> with Q4 spikes</li>
+            <li><strong>Pareto effect</strong>: Top ~10% customers generate ~60% revenue</li>
+            <li>Returning customers drive consistent revenue, highlighting <strong>retention</strong> as a key business driver</li>
+            <li>Certain countries outperform, suggesing <strong>geography targeted marketing</strong> potential</li>
+          </li>
+        </ul>
+        <figure class="project-figure">
+          <img src="image/sql-ecommerce/sql-ecommerce-fig_monthly_revenue.png" alt="Monthly Revenue Trend" style="max-width:450px; width:100%; height:auto;">
+          <figcaption>Monthly Revenue Trend</figcaption>
+        </figure>
 
-          <figure class="project-figure">
-            <img src="image/sql-ecommerce/sql-ecommerce-fig_new_vs_return.png" alt="New vs Returning Customers" style="max-width:450px; width:100%; height:auto;">
-            <figcaption>New vs Returning Customers</figcaption>
-          </figure>
+        <figure class="project-figure">
+          <img src="image/sql-ecommerce/sql-ecommerce-fig_new_vs_return.png" alt="New vs Returning Customers" style="max-width:450px; width:100%; height:auto;">
+          <figcaption>New vs Returning Customers</figcaption>
+        </figure>
 
-          <figure class="project-figure">
-            <img src="image/sql-ecommerce/sql-ecommerce-fig_top_customers.png" alt="Top 10 Customers" style="max-width:450px; width:100%; height:auto;">
-            <figcaption>Top 10 Customers</figcaption>
-          </figure>
-        </header>
-      </article>
+        <figure class="project-figure">
+          <img src="image/sql-ecommerce/sql-ecommerce-fig_top_customers.png" alt="Top 10 Customers" style="max-width:450px; width:100%; height:auto;">
+          <figcaption>Top 10 Customers</figcaption>
+        </figure>
+      </header>
       <br>
 
       <!-- Telco: 상세 카드 (비즈니스 맥락 + 시각 요소 + 세부 내용) -->
-      <article class="project-card highlight">
-        <header class="project-header">
-          <h3>
-            Telco Customer Churn Prediction&nbsp;&nbsp;
-            <span class="year">(2025)</span>
-          </h3>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction" target="_blank" rel="noopener">GitHub Repo</a>
-          </div>
-          <br>
-          <!-- Key words -->
-          <div class="tags">
-            <span style="background-color:#fff5b1"> Churn </span> &nbsp; <span style="background-color:#c0ed9e"> Imbalanced Data </span> &nbsp;
-            <span style="background-color:#fff5b1"> SMOTE </span> &nbsp; <span style="background-color:#c0ed9e"> XGBoost </span> &nbsp;
-            <span style="background-color:#fff5b1"> Logistic Regression </span> &nbsp; <span style="background-color:#c0ed9e"> Random Forest </span> &nbsp;
-            <span style="background-color:#fff5b1"> EDA </span> &nbsp; <span style="background-color:#c0ed9e"> Feature Engineering </span>
-          </div>
-        
+      <header class="project-header">
+        <h3>
+          Telco Customer Churn Prediction&nbsp;&nbsp;
+          <span class="year">(2025)</span>
+        </h3>
+        <!-- Github link -->
+        <div class="links">
+          <a class="btn" href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+        <br>
+        <!-- Key words -->
+        <div class="tags">
+          <span style="background-color:#fff5b1"> Churn </span> &nbsp; <span style="background-color:#c0ed9e"> Imbalanced Data </span> &nbsp;
+          <span style="background-color:#fff5b1"> SMOTE </span> &nbsp; <span style="background-color:#c0ed9e"> XGBoost </span> &nbsp;
+          <span style="background-color:#fff5b1"> Logistic Regression </span> &nbsp; <span style="background-color:#c0ed9e"> Random Forest </span> &nbsp;
+          <span style="background-color:#fff5b1"> EDA </span> &nbsp; <span style="background-color:#c0ed9e"> Feature Engineering </span>
+        </div>
+      
 
-        <!-- Pipeline Figure -->
-        <!-- <figure class="project-figure">
-          <img src="image/diagram/Movielens25M.drawio.png" alt="Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation" />
-          <figcaption>Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation</figcaption>
-        </figure> -->
+      <!-- Pipeline Figure -->
+      <!-- <figure class="project-figure">
+        <img src="image/diagram/Movielens25M.drawio.png" alt="Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation" />
+        <figcaption>Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation</figcaption>
+      </figure> -->
 
-        <!-- 핵심 요약 (비즈니스 임팩트 중심) -->
-          <ul class="bullets">
-            <li><strong>Goal:</strong> Identify high-risk customers early to guide retention campaigns and reduce churn.</li>
-            <li><strong>Data:</strong> 7k+ customer records with plan/contract/payment/service features; label: churn (yes/no).</li>
-            <li><strong>Approach:</strong> EDA → categorical encoding & usage-based features (tenure buckets, service bundles) → models (LogReg/RF/XGB) → SMOTE for imbalance → threshold tuning.</li>
-            <li><strong>Evaluation:</strong> Compare <em>Recall/AUC</em> across models; select business-friendly operating point for retention budget.</li>
-            <li><strong>Outcome:</strong> XGBoost AUC ↑ to 0.85; recall at 0.77 with precision trade-off optimized for campaign cost.</li>
-          </ul>
+      <!-- 핵심 요약 (비즈니스 임팩트 중심) -->
+        <ul class="bullets">
+          <li><strong>Goal:</strong> Identify high-risk customers early to guide retention campaigns and reduce churn.</li>
+          <li><strong>Data:</strong> 7k+ customer records with plan/contract/payment/service features; label: churn (yes/no).</li>
+          <li><strong>Approach:</strong> EDA → categorical encoding & usage-based features (tenure buckets, service bundles) → models (LogReg/RF/XGB) → SMOTE for imbalance → threshold tuning.</li>
+          <li><strong>Evaluation:</strong> Compare <em>Recall/AUC</em> across models; select business-friendly operating point for retention budget.</li>
+          <li><strong>Outcome:</strong> XGBoost AUC ↑ to 0.85; recall at 0.77 with precision trade-off optimized for campaign cost.</li>
+        </ul>
 
-        <!-- 인사이트 시각화: 썸네일 3개 그리드 -->
-        <!-- <div class="thumb-grid">
-          <figure>
-            <img src="image/telco_feature_importance.png" alt="Feature importance bar chart" />
-            <figcaption>Top Features (e.g., contract type, monthly charges, tenure)</figcaption>
-          </figure>
-          <figure>
-            <img src="image/telco_churn_by_segment.png" alt="Churn rate by segment plot" />
-            <figcaption>Churn by Segment (e.g., month-to-month vs two-year)</figcaption>
-          </figure>
-          <figure>
-            <img src="image/telco_model_metrics.png" alt="Model comparison table/ROC curves" />
-            <figcaption>Model Comparison (ROC / AUC / Recall)</figcaption>
-          </figure>
-        </div> -->
+      <!-- 인사이트 시각화: 썸네일 3개 그리드 -->
+      <!-- <div class="thumb-grid">
+        <figure>
+          <img src="image/telco_feature_importance.png" alt="Feature importance bar chart" />
+          <figcaption>Top Features (e.g., contract type, monthly charges, tenure)</figcaption>
+        </figure>
+        <figure>
+          <img src="image/telco_churn_by_segment.png" alt="Churn rate by segment plot" />
+          <figcaption>Churn by Segment (e.g., month-to-month vs two-year)</figcaption>
+        </figure>
+        <figure>
+          <img src="image/telco_model_metrics.png" alt="Model comparison table/ROC curves" />
+          <figcaption>Model Comparison (ROC / AUC / Recall)</figcaption>
+        </figure>
+      </div> -->
 
-        <!-- 접었다 펼치는 상세: 데이터/모델링/재현성 -->
-          <details class="more">
-            <summary>Details (Data, Modeling, Reproducibility)</summary>
-            <div class="cols">
-              <div>
-                <h4>Data & EDA</h4>
-                <ul>
-                  <li>Handled missing values; normalized numeric; encoded categorical (one-hot/ordinal).</li>
-                  <li>Explored churn distribution by service bundle (Fiber, TechSupport, OnlineSecurity).</li>
-                  <li>Created features: <code>tenure_bin</code>, <code>charges_per_service</code>, <code>contract_risk</code>.</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Modeling & Tuning</h4>
-                <ul>
-                  <li>Baselines (LogReg) → tree models (RF/XGBoost) with randomized/grid search.</li>
-                  <li>Imbalance handling: <code>SMOTE</code>, class weights, threshold optimization for recall.</li>
-                  <li>Metrics: AUC/ROC, Recall@Policy (budget-constrained targeting), PR curve.</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Reproducibility</h4>
-                <ul>
-                  <li>Clear train/validation/test split; random seeds pinned.</li>
-                  <li>Modular scripts/notebooks; requirements pinned in <code>requirements.txt</code>.</li>
-                  <li>Plots saved to <code>assets/</code>; results summary table exported as HTML/PNG.</li>
-                </ul>
-              </div>
+      <!-- 접었다 펼치는 상세: 데이터/모델링/재현성 -->
+        <details class="more">
+          <summary>Details (Data, Modeling, Reproducibility)</summary>
+          <div class="cols">
+            <div>
+              <h4>Data & EDA</h4>
+              <ul>
+                <li>Handled missing values; normalized numeric; encoded categorical (one-hot/ordinal).</li>
+                <li>Explored churn distribution by service bundle (Fiber, TechSupport, OnlineSecurity).</li>
+                <li>Created features: <code>tenure_bin</code>, <code>charges_per_service</code>, <code>contract_risk</code>.</li>
+              </ul>
             </div>
-          </details>
-        </header>
-      </article>
-
-  </section>
+            <div>
+              <h4>Modeling & Tuning</h4>
+              <ul>
+                <li>Baselines (LogReg) → tree models (RF/XGBoost) with randomized/grid search.</li>
+                <li>Imbalance handling: <code>SMOTE</code>, class weights, threshold optimization for recall.</li>
+                <li>Metrics: AUC/ROC, Recall@Policy (budget-constrained targeting), PR curve.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Reproducibility</h4>
+              <ul>
+                <li>Clear train/validation/test split; random seeds pinned.</li>
+                <li>Modular scripts/notebooks; requirements pinned in <code>requirements.txt</code>.</li>
+                <li>Plots saved to <code>assets/</code>; results summary table exported as HTML/PNG.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </header>
+  </article>
+</section>
