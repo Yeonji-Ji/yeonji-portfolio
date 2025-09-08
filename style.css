@@ -11,7 +11,7 @@ body {
 
 section,
 footer {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 1rem 2rem;
 }
@@ -136,7 +136,8 @@ h3 {
 }
 
 .project-figure {
-  margin: 0.6rem 0 0.8rem;
+  margin: 0.6rem auto 0.8rem;
+  text-align: center;
 }
 
 .project-figure img {
