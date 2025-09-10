@@ -227,7 +227,6 @@ h3 {
   gap: 0.5rem;
   margin-top: 0.6rem;
   text-align: right;
-  text-decoration: underline;
 }
 
 .btn {
@@ -237,7 +236,7 @@ h3 {
   border-radius: 8px;
   background: #2563eb;
   color: #fff;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .btn.secondary {
