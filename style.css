@@ -119,7 +119,7 @@ h3 {
   font-size: 0.9rem;
   color: #667085;
   font-weight: 500;
-  background: #eef2ff;
+  background: #d3d3d3;
   padding: 0.1rem 0.4rem;
   border-radius: 6px;
   text-align: right;
@@ -129,7 +129,7 @@ h3 {
   font-size: 0.9rem;
   color: #667085;
   font-weight: 500;
-  background: #eef2ff;
+  background: #d3d3d3;
   padding: 0.1rem 0.4rem;
   border-radius: 6px;
   text-align: right;
@@ -227,6 +227,7 @@ h3 {
   gap: 0.5rem;
   margin-top: 0.6rem;
   text-align: right;
+  text-decoration: underline;
 }
 
 .btn {
