@@ -239,14 +239,15 @@ h3 {
   background: #2563eb;
   color: #fff;
   text-decoration: underline;
+  text-decoration-color: #fff;
 }
 
 .btn.secondary {
   display: inline-block;
   font-size: 0.7rem;
-  padding: 0.1rem 0.1rem;
+  padding: 0.2rem 0.2rem;
   border-radius: 5px;
-  background: #d1d1d1;
+  background: #e4e4e9;
   color: #2563eb;
   text-decoration: underline;
 }
