@@ -229,6 +229,7 @@ h3 {
   gap: 0.5rem;
   margin-top: 0.6rem;
   text-align: right;
+  text-decoration: underline;
 }
 
 .btn {
@@ -244,9 +245,9 @@ h3 {
 
 .btn.secondary {
   display: inline-block;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.2rem;
-  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
   background: #e4e4e9;
   color: #2563eb;
   text-decoration: underline;
