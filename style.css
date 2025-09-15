@@ -5,7 +5,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding-top: 100px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   background-color: #f6ecdd;
   color: #482c06;
@@ -243,13 +243,47 @@ h3 {
 
 .btn.secondary {
   display: inline-block;
-  font-size: 0.6rem;
-  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.1rem;
   border-radius: 5px;
   background: #d1d1d1;
   color: #2563eb;
   text-decoration: underline;
 }
+
+
+html { scroll-behavior: smooth; }
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background-color: #482c06;
+  color: #f6ecdd;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.back-to-top:hover {
+  box-shadow: 0 10px 22px rgba(0,0,0,0.24);
+}
+
+@media (hover: none) {
+  .back-to-top:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
+}
+
+
 
 /* =========================
    Responsive
