@@ -57,7 +57,89 @@
       </header>
 
 
-      <!-- PROJECT 2) SQL DATA E-COMMERCE -->
+      <!-- PROJECT 2) AMAZON REVIEW SENTIMENT -->
+      <header class="project-header">
+        <h3>
+          Sentiment Analysis of Amazon Customer Reviews using TF-IDF
+          <span class="year">2025</span>
+          <!-- Github link -->
+          <div class="links">
+            <a class="btn" href="https://github.com/Yeonji-Ji/amazon-reviews-tfidf-sentiment" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </h3>
+        <br>
+        <!-- Key words -->
+        <div class="tags">
+        <span style="background-color:#f6cbd7"> NLP </span> <span style="background-color:#d2f8e4"> Sentiment Analysis </span>
+        <span style="background-color:#f6cbd7"> Reviews </span> <span style="background-color:#d2f8e4"> TF-IDF </span>
+        <span style="background-color:#f6cbd7"> Logistic Regression </span> <span style="background-color:#d2f8e4"> Naive Bayes </span>
+        <span style="background-color:#f6cbd7"> SVM </span> <span style="background-color:#d2f8e4"> LinearSVC </span>
+        <span style="background-color:#f6cbd7"> XGBoost </span>
+        </div>
+        <br>
+        <!-- Pipeline Figure -->
+        <!-- <figure class="project-figure">
+          <img src="image/diagram/Movielens25M.drawio.png" 
+              alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation"
+              style="width: 100%; height: auto;"  />
+          <figcaption>Movie Recommendation System pipeline</figcaption>
+        </figure>
+        <br> -->
+        <!-- Project Summry -->
+        <ul class="bullets">
+          <li><strong>Goal:</strong> Build a machine learning model to classify customer reviews as positive or negative</li>
+          <li><strong>Data:</strong> A few million Amazon customer reviews (input text) and star ratings (output labels).</li>
+          <li><strong>Approach:</strong>
+            <ul>
+              <li><strong>EDA & Preprocessing:</strong> Analyze pos/neg label distribution and text length, and identify frequent words using WordCloud.</li>
+                  <figure class="project-figure">
+                  <img src="image/amazon-reviews-tfidf-sentiment/WordCloud.png" alt="Positive vs. Negative" style="width:100%; height:auto;">
+                  <figcaption>Positive/Negative Reviews WordCloud</figcaption>
+                  </figure>
+              <li><strong>Feature Extraction:</strong> Apply TF-IDF to learn the feature importance.</li>
+              <li><strong>Linear Model:</strong> Apply logistic Regression and Naive Bayes (Multinomial/Complement).</li>
+              <li><strong>Tree-Based Model:</strong> Use XGBoost.</li>
+            </ul>
+          </li>
+          <li><strong>Evaluation:</strong> Assessed models using <em>Accuracy</em>, <em>Precision</em>, <em>Recall</em>, <em>F1-score</em>, <em>ROC-AUC</em>, and <em>AP-score</em> metrics</li>
+          <li><strong>Outcome:</strong> Logistic Regression, Naive Bayes and LinearSVC provide strong, reliable baselines for text classification tasks, while XGBoost’s weaker performance highlights that complex models are not always better</li>
+        </ul>
+
+        <p>
+          <strong>Business Insight: </strong><br>
+          A very high-dimensional and sparse featuare space that TF-IDF produces is more effective on linear classifiers than on tree-based models like XGBoost.
+          This demonstrates the importance of choosing algorithms that match the data characteristics, not assuming one model fits all.
+        </p>
+
+        <details class="more">
+          <summary>Show Results (Logistic Regression, Naive Bayes, LinearSVC, XGBoost)</summary>
+            <h4>Logistic Regression vs. Naive Bayes:</h4>
+            <figure class="project-figure">
+            <img src="image/amazon-reviews-tfidf-sentiment/ConfusionMatrix_LR_NB.png" alt="LR vs. NB" style="width:100%; height:auto;">
+            <figcaption>Confusion Matrix of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
+            </figure>
+
+            <figure class="project-figure">
+            <img src="image/amazon-reviews-tfidf-sentiment/ROC_AUC_PR_AP.png" alt="LR vs. NB" style="width:100%; height:auto;">
+            <figcaption>ROC Curve & Precision-Recall Curve of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
+            </figure>
+
+            <h4>Support Vector Machins (LinearSVC):</h4>
+            <figure class="project-figure">
+            <img src="image/amazon-reviews-tfidf-sentiment/LinearSVC_ROC_AUC_PR_AP.png" alt="LinearSVC" style="width:100%; height:auto;">
+            <figcaption>ROC Curve & Precision-Recall Curve of LinearSVC</figcaption>
+            </figure>
+
+            <h4>Tree-Based Model (XGBoost):</h4>
+            <figure class="project-figure">
+            <img src="image/amazon-reviews-tfidf-sentiment/XGBoost_ROC_AUC_PR_AP.png" alt="XGBoost" style="width:100%; height:auto;">
+            <figcaption>ROC Curve & Precision-Recall Curve of XGBoost</figcaption>
+            </figure>            
+        </details>
+      </header>
+
+
+      <!-- PROJECT 3) SQL DATA E-COMMERCE -->
       <header class="project-header">
         <h3>
           Retail E-commerce SQL Analytics
