@@ -5,6 +5,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding-top: 100px;
+  font-size: 14px;
+  line-height: 1.5;
   background-color: #f6ecdd;
   color: #482c06;
 }
@@ -75,7 +77,7 @@ h3 {
 ========================= */
 .tight {
   margin: 0;
-  line-height: 1.8; /* 줄 간격 */
+  line-height: 1.2; /* 줄 간격 */
 }
 
 /* =========================

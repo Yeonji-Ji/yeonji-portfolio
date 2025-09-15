@@ -93,16 +93,21 @@
             <ul>
               <li><strong>EDA & Preprocessing:</strong> Explored class distribution, text length, and frequent words (via WordCloud).</li>
                   <figure class="project-figure">
-                  <img src="image/amazon-reviews-sentiment/WordCloud.png" alt="Positive vs. Negative" style="width:100%; height:auto;">
+                  <img src="image/amazon-reviews-sentiment/WordCloud.png" alt="Positive vs. Negative" style="width:80%; height:auto;">
                   <figcaption>WordCloud of Positive vs. Negative Reviews</figcaption>
                   </figure>
               <li><strong>Feature Extraction:</strong> Applied TF-IDF to capture word importance.</li>
-              <li><strong>Linear Model:</strong> Trained Logistic Regression and Naive Bayes (Multinomial/Complement).</li>
+              <li><strong>Linear Models:</strong> Trained Logistic Regression and Naive Bayes (Multinomial/Complement).</li>
               <li><strong>Tree-Based Model:</strong> Evaluated XGBoost.</li>
             </ul>
           </li>
           <li><strong>Evaluation:</strong> Compared models using <em>Accuracy</em>, <em>Precision</em>, <em>Recall</em>, <em>F1-score</em>, <em>ROC-AUC</em>, and <em>Average Precision</em>.</li>
           <li><strong>Outcome:</strong> Logistic Regression, Naive Bayes, and Linear SVC delivered strong, reliable baselines for text classification. In contrast, XGBoost underperformed, showing that more complex models are not always superior.</li>
+              <figure class="project-figure">
+              <img src="image/amazon-reviews-sentiment/ConfusionMatrix_LR_NB.png" alt="CM of LR vs. NB" style="width:80%; height:auto;">
+              <figcaption>Confusion Matrix of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
+              </figure>
+
         </ul>
 
         <p>
@@ -114,25 +119,21 @@
         <details class="more">
           <summary>Show Results (Logistic Regression, Naive Bayes, LinearSVC, XGBoost)</summary>
             <h4>Logistic Regression vs. Naive Bayes:</h4>
-            <figure class="project-figure">
-            <img src="image/amazon-reviews-tfidf-sentiment/ConfusionMatrix_LR_NB.png" alt="LR vs. NB" style="width:100%; height:auto;">
-            <figcaption>Confusion Matrix of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
-            </figure>
 
             <figure class="project-figure">
-            <img src="image/amazon-reviews-sentiment/ROC_AUC_PR_AP.png" alt="LR vs. NB" style="width:100%; height:auto;">
+            <img src="image/amazon-reviews-sentiment/ROC_AUC_PR_AP.png" alt="LR vs. NB" style="width:80%; height:auto;">
             <figcaption>ROC Curve & Precision-Recall Curve of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
             </figure>
 
             <h4>Support Vector Machins (LinearSVC):</h4>
             <figure class="project-figure">
-            <img src="image/amazon-reviews-sentiment/LinearSVC_ROC_AUC_PR_AP.png" alt="LinearSVC" style="width:100%; height:auto;">
+            <img src="image/amazon-reviews-sentiment/LinearSVC_ROC_AUC_PR_AP.png" alt="LinearSVC" style="width:80%; height:auto;">
             <figcaption>ROC Curve & Precision-Recall Curve of LinearSVC</figcaption>
             </figure>
 
             <h4>Tree-Based Model (XGBoost):</h4>
             <figure class="project-figure">
-            <img src="image/amazon-reviews-sentiment/XGBoost_ROC_AUC_PR_AP.png" alt="XGBoost" style="width:100%; height:auto;">
+            <img src="image/amazon-reviews-sentiment/XGBoost_ROC_AUC_PR_AP.png" alt="XGBoost" style="width:80%; height:auto;">
             <figcaption>ROC Curve & Precision-Recall Curve of XGBoost</figcaption>
             </figure>            
         </details>
