@@ -140,6 +140,85 @@
       </header>
       <br><br>
 
+      <!-- PROJECT 3) Marketing -->
+      <header class="project-header">
+        <h3>
+          Marketing
+          <span class="year">2025</span>
+          <!-- Github link -->
+          <div class="links">
+            <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </h3>
+        <br>
+        <!-- Key words -->
+        <div class="tags">
+        <span style="background-color:#f6cbd7"> Welch's t-test </span> <span style="background-color:#d2f8e4"> Bayesian A/B Test </span>
+        <span style="background-color:#f6cbd7"> Posterior Inference </span> <span style="background-color:#d2f8e4"> PSM </span>
+        <span style="background-color:#f6cbd7"> ATT </span> <span style="background-color:#d2f8e4"> SMD </span>
+        <span style="background-color:#f6cbd7"> Feature Engineering </span> 
+        </div>
+        <br>
+
+        <!-- Project Summry -->
+        <ul class="bullets">
+          <li><strong>Goal:</strong> Measure and validate the true effectiveness of a marketing campaign beyond raw response counts.</li>
+          <li><strong>Data:</strong> 
+            <ul>
+              <li>Customer demographics (age, income, kid home, etc.)</li>
+              <li>Prior marketing campaign acceptance history (aggregated as features)</li>
+              <li>Spending data (Total Spend) as a key performance indicator</li>
+            </ul>
+          </li>
+
+        <!-- Data Figure -->
+        <figure class="project-figure">
+          <img src="image/marketing-campaigns/box_plot_totalspend_response.png" 
+              alt="Comparison"
+              style="width: 100%; height: auto;"  />
+          <figcaption>Total Spend by Campaign Response</figcaption>
+        </figure>
+        <br>
+
+          <li><strong>Method:</strong>
+            <ul>
+              <li>Engineered response features via one-hot encoding & aggregation</li>
+              <li>Conducted Welch’s t-test and validated consistency with a Bayesian A/B test</li>
+              <li>Applied Propensity Score Matching (11 covariates, 334 matched pairs) to isolate causal effects</li>
+              <li>Evaluated covariate balance with Standardized Mean Differences (SMD) and proposed refinements</li>
+            </ul>
+          </li>
+          <li><strong>Results:</strong>
+            <ul>
+              <li>Statistically significant campaign effect (t=10.87, p~0.0)</li>
+              <li>Posterior estimates aligned with frequentist results, confirming robustness</li>
+              <li>Pure treatment effect estimated (ATT=228.76) after controlling for confounders</li>
+              <li>Identified high-imbalance features (e.g., AcceptedCnt) and recommended adjustments for cleaner causal interpretation</li>
+            </ul>
+          </li>
+        </ul>
+
+        <details class="more">
+          <summary>Show Results</summary>
+            <h4>Bayesian A/B Testing:</h4>
+            <figure class="project-figure">
+            <img src="image/marketing-campaigns/posterior_distribution_B_over_A.png" alt="B over A" style="width:80%; height:auto;">
+            <figcaption>Posterior Distribution of the Difference</figcaption>
+            </figure>
+
+            <h4>PSM-SMD:</h4>
+            <figure class="project-figure">
+            <img src="image/marketing-campaigns/covariate_balance_before_after_PSM.png" alt="SMD" style="width:80%; height:auto;">
+            <figcaption>SMD of Covariates Before & After PSM</figcaption>
+            </figure>
+
+            <h4>Propensity Score:</h4>
+            <figure class="project-figure">
+            <img src="image/marketing-campaigns/Covariate Balance: Before & After PSM" alt="Propensity Score" style="width:80%; height:auto;">
+            <figcaption>Propensity Score Distribution Before and After Matching</figcaption>
+            </figure>            
+        </details>
+
 
       <!-- PROJECT 3) SQL DATA E-COMMERCE -->
       <header class="project-header">
