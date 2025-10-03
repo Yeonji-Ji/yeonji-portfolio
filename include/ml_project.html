@@ -1,419 +1,434 @@
 <section id="MLprojects">
   <h2>Machine Learning Projects</h2>
     <article class="project-card">
-      <a href="#Marketing-Campaign">Marketing Campaign</a>
+      <a href="#Movie-Rec">Recommendation System with Movielens Dataset</a>
+      <a href="#NLP">Sentiment Analysis with Amazon Customer Reviews Dataset</a>
+      <a href="#Marketing-Campaign">A/B Testing with Marketing Campaign Dataset</a>
+      <a href="#Churn">Customer Churn Prediction with Telco Customer Dataset</a>
+      <a href="#SQL">Retail E-commerce SQL Analytics</a>
+      <br><br>
+<!------------------------------------------------------>
       <!-- PROJECT 1) MOVIELENS 25M RECOMMENDATION -->
-      <header class="project-header">
-        <h3>
-          Movie Recommendations: From Matrix Factorization to Hybrid Ranking
-          <span class="year">2025</span>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub</a>
+      <section id="Movie-Rec">
+        <header class="project-header">
+          <h3>
+            Movie Recommendations: From Matrix Factorization to Hybrid Ranking
+            <span class="year">2025</span>
+            <!-- Github link -->
+            <div class="links">
+              <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </h3>
+          <br>
+          <!-- Key words -->
+          <div class="tags">
+          <span style="background-color:#f6cbd7"> Matrix Factorization </span> <span style="background-color:#d2f8e4"> SVD </span>
+          <span style="background-color:#f6cbd7"> Hybrid Ranking </span> <span style="background-color:#d2f8e4"> LightGBM </span>
+          <span style="background-color:#f6cbd7"> Feature Engineering </span> <span style="background-color:#d2f8e4"> EDA </span>
+          <span style="background-color:#f6cbd7"> Precision </span> <span style="background-color:#d2f8e4"> Recall </span>
+          <span style="background-color:#f6cbd7"> NDCG </span> <span style="background-color:#d2f8e4"> Recommendation </span>
           </div>
-        </h3>
-        <br>
-        <!-- Key words -->
-        <div class="tags">
-        <span style="background-color:#f6cbd7"> Matrix Factorization </span> <span style="background-color:#d2f8e4"> SVD </span>
-        <span style="background-color:#f6cbd7"> Hybrid Ranking </span> <span style="background-color:#d2f8e4"> LightGBM </span>
-        <span style="background-color:#f6cbd7"> Feature Engineering </span> <span style="background-color:#d2f8e4"> EDA </span>
-        <span style="background-color:#f6cbd7"> Precision </span> <span style="background-color:#d2f8e4"> Recall </span>
-        <span style="background-color:#f6cbd7"> NDCG </span> <span style="background-color:#d2f8e4"> Recommendation </span>
-        </div>
-        <br>
-        <!-- Pipeline Figure -->
-        <figure class="project-figure">
-          <img src="image/diagram/Movielens25M.drawio.png" 
-              alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation"
-              style="width: 100%; height: auto;"  />
-          <figcaption>Movie Recommendation System pipeline</figcaption>
-        </figure>
-        <br>
-        <!-- Project Summry -->
-        <ul class="bullets">
-          <li><strong>Goal:</strong> Generate personalized movie recommendation lists based on movie features and customer preferences</li>
-          <li><strong>Data:</strong> MovieLens rating (25,000,095) data combined with movie metadata (genres, popularity, quality, recency)</li>
-          <li><strong>Approach:</strong>
-            <ul>
-              <li><strong>EDA & Preprocessing:</strong> Filter ratings after 2015 and apply 10-core filtering</li>
-              <li><strong>Feature Engineering:</strong> Built user and item features including genres, popularity (#ratings), quality (mean rating), and recency</li>
-              <li><strong>Baseline:</strong> Applied Matrix Factorization (SVD) to learn user & item embeddings and generate Top-K candidates</li>
-              <li><strong>Hybrid Model:</strong> Combined MF scores with content-based features and trained a ranking model using LightGBM</li>
-            </ul>
-          </li>
-          <li><strong>Evaluation:</strong> Assessed models using <em>Precision</em>, <em>Recall</em>, and <em>NDCG</em> metrics</li>
-          <li><strong>Outcome:</strong> The hybrid model achieved modest but consistent gains over the MF baseline in several key metrics (Precision@10/20, Recall@5/10/20, NDCG@20)</li>
-        </ul>
+          <br>
+          <!-- Pipeline Figure -->
+          <figure class="project-figure">
+            <img src="image/diagram/Movielens25M.drawio.png" 
+                alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation"
+                style="width: 100%; height: auto;"  />
+            <figcaption>Movie Recommendation System pipeline</figcaption>
+          </figure>
+          <br>
+          <!-- Project Summry -->
+          <ul class="bullets">
+            <li><strong>Goal:</strong> Generate personalized movie recommendation lists based on movie features and customer preferences</li>
+            <li><strong>Data:</strong> MovieLens rating (25,000,095) data combined with movie metadata (genres, popularity, quality, recency)</li>
+            <li><strong>Approach:</strong>
+              <ul>
+                <li><strong>EDA & Preprocessing:</strong> Filter ratings after 2015 and apply 10-core filtering</li>
+                <li><strong>Feature Engineering:</strong> Built user and item features including genres, popularity (#ratings), quality (mean rating), and recency</li>
+                <li><strong>Baseline:</strong> Applied Matrix Factorization (SVD) to learn user & item embeddings and generate Top-K candidates</li>
+                <li><strong>Hybrid Model:</strong> Combined MF scores with content-based features and trained a ranking model using LightGBM</li>
+              </ul>
+            </li>
+            <li><strong>Evaluation:</strong> Assessed models using <em>Precision</em>, <em>Recall</em>, and <em>NDCG</em> metrics</li>
+            <li><strong>Outcome:</strong> The hybrid model achieved modest but consistent gains over the MF baseline in several key metrics (Precision@10/20, Recall@5/10/20, NDCG@20)</li>
+          </ul>
 
-        <p>
-          <strong>Business Insight: </strong><br>
-          By combining features like popularity, genres and recency, the hybrid model captures both individual tastes and trending content, 
-          helping platforms keep recommendations both personalized and timely.
-        </p>
-        <figure class="project-figure">
-        <img src="image/movielens-25m-recsys/movielens25m-fig_metrics_mf_vs_hybrid.png" alt="MF vs. Hybrid" style="width:100%; height:auto;">
-        <figcaption>Monthly Revenue Trend</figcaption>
-        </figure>
-      </header>
+          <p>
+            <strong>Business Insight: </strong><br>
+            By combining features like popularity, genres and recency, the hybrid model captures both individual tastes and trending content, 
+            helping platforms keep recommendations both personalized and timely.
+          </p>
+          <figure class="project-figure">
+          <img src="image/movielens-25m-recsys/movielens25m-fig_metrics_mf_vs_hybrid.png" alt="MF vs. Hybrid" style="width:100%; height:auto;">
+          <figcaption>Monthly Revenue Trend</figcaption>
+          </figure>
+        </header>
+      </section>
       <br><br>
 
 <!------------------------------------------------------>
       <!-- PROJECT 2) AMAZON REVIEW SENTIMENT -->
-      <header class="project-header">
-        <h3>
-          Sentiment Analysis of Amazon Customer Reviews using TF-IDF
-          <span class="year">2025</span>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/amazon-reviews-tfidf-sentiment" target="_blank" rel="noopener">GitHub</a>
+      <section id="NLP">
+        <header class="project-header">
+          <h3>
+            Sentiment Analysis of Amazon Customer Reviews using TF-IDF
+            <span class="year">2025</span>
+            <!-- Github link -->
+            <div class="links">
+              <a class="btn" href="https://github.com/Yeonji-Ji/amazon-reviews-tfidf-sentiment" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </h3>
+          <br>
+          <!-- Key words -->
+          <div class="tags">
+          <span style="background-color:#f6cbd7"> NLP </span> <span style="background-color:#d2f8e4"> Sentiment Analysis </span>
+          <span style="background-color:#f6cbd7"> Reviews </span> <span style="background-color:#d2f8e4"> TF-IDF </span>
+          <span style="background-color:#f6cbd7"> Logistic Regression </span> <span style="background-color:#d2f8e4"> Naive Bayes </span>
+          <span style="background-color:#f6cbd7"> SVM </span> <span style="background-color:#d2f8e4"> LinearSVC </span>
+          <span style="background-color:#f6cbd7"> XGBoost </span>
           </div>
-        </h3>
-        <br>
-        <!-- Key words -->
-        <div class="tags">
-        <span style="background-color:#f6cbd7"> NLP </span> <span style="background-color:#d2f8e4"> Sentiment Analysis </span>
-        <span style="background-color:#f6cbd7"> Reviews </span> <span style="background-color:#d2f8e4"> TF-IDF </span>
-        <span style="background-color:#f6cbd7"> Logistic Regression </span> <span style="background-color:#d2f8e4"> Naive Bayes </span>
-        <span style="background-color:#f6cbd7"> SVM </span> <span style="background-color:#d2f8e4"> LinearSVC </span>
-        <span style="background-color:#f6cbd7"> XGBoost </span>
-        </div>
-        <br>
-        <!-- Pipeline Figure -->
-        <figure class="project-figure">
-          <img src="image/diagram/Amazon Review Sentiment.drawio.png" 
-              alt="Sentiment Analysis pipeline: Raw Data → EDA/Preprocessing -> TF-IDF → Model → Evaluation"
-              style="width: 100%; height: auto;"  />
-          <figcaption>Sentiment Analysis Pipeline</figcaption>
-        </figure>
-        <br>
-        <!-- Project Summry -->
-        <ul class="bullets">
-          <li><strong>Goal:</strong> Develop a machine learning model to classify Amazon customer reviews as positive or negative.</li>
-          <li><strong>Data:</strong> Millions of Amazon customer reviews (text) with star ratings as sentiment labels.</li>
-          <li><strong>Approach:</strong>
-            <ul>
-              <li><strong>EDA & Preprocessing:</strong> Explored class distribution, text length, and frequent words (via WordCloud).</li>
-                  <figure class="project-figure">
-                  <img src="image/amazon-reviews-sentiment/WordCloud.png" alt="Positive vs. Negative" style="width:80%; height:auto;">
-                  <figcaption>WordCloud of Positive vs. Negative Reviews</figcaption>
-                  </figure>
-              <li><strong>Feature Extraction:</strong> Applied TF-IDF to capture word importance.</li>
-              <li><strong>Linear Models:</strong> Trained Logistic Regression and Naive Bayes (Multinomial/Complement).</li>
-              <li><strong>Tree-Based Model:</strong> Evaluated XGBoost.</li>
-            </ul>
-          </li>
-          <li><strong>Evaluation:</strong> Compared models using <em>Accuracy</em>, <em>Precision</em>, <em>Recall</em>, <em>F1-score</em>, <em>ROC-AUC</em>, and <em>Average Precision</em>.</li>
-          <li><strong>Outcome:</strong> Logistic Regression, Naive Bayes, and Linear SVC delivered strong, reliable baselines for text classification. In contrast, XGBoost underperformed, showing that more complex models are not always superior.</li>
+          <br>
+          <!-- Pipeline Figure -->
+          <figure class="project-figure">
+            <img src="image/diagram/Amazon Review Sentiment.drawio.png" 
+                alt="Sentiment Analysis pipeline: Raw Data → EDA/Preprocessing -> TF-IDF → Model → Evaluation"
+                style="width: 100%; height: auto;"  />
+            <figcaption>Sentiment Analysis Pipeline</figcaption>
+          </figure>
+          <br>
+          <!-- Project Summry -->
+          <ul class="bullets">
+            <li><strong>Goal:</strong> Develop a machine learning model to classify Amazon customer reviews as positive or negative.</li>
+            <li><strong>Data:</strong> Millions of Amazon customer reviews (text) with star ratings as sentiment labels.</li>
+            <li><strong>Approach:</strong>
+              <ul>
+                <li><strong>EDA & Preprocessing:</strong> Explored class distribution, text length, and frequent words (via WordCloud).</li>
+                    <figure class="project-figure">
+                    <img src="image/amazon-reviews-sentiment/WordCloud.png" alt="Positive vs. Negative" style="width:80%; height:auto;">
+                    <figcaption>WordCloud of Positive vs. Negative Reviews</figcaption>
+                    </figure>
+                <li><strong>Feature Extraction:</strong> Applied TF-IDF to capture word importance.</li>
+                <li><strong>Linear Models:</strong> Trained Logistic Regression and Naive Bayes (Multinomial/Complement).</li>
+                <li><strong>Tree-Based Model:</strong> Evaluated XGBoost.</li>
+              </ul>
+            </li>
+            <li><strong>Evaluation:</strong> Compared models using <em>Accuracy</em>, <em>Precision</em>, <em>Recall</em>, <em>F1-score</em>, <em>ROC-AUC</em>, and <em>Average Precision</em>.</li>
+            <li><strong>Outcome:</strong> Logistic Regression, Naive Bayes, and Linear SVC delivered strong, reliable baselines for text classification. In contrast, XGBoost underperformed, showing that more complex models are not always superior.</li>
+                <figure class="project-figure">
+                <img src="image/amazon-reviews-sentiment/ConfusionMatrix_LR_NB.png" alt="CM of LR vs. NB" style="width:100%; height:auto;">
+                <figcaption>Confusion Matrix of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
+                </figure>
+
+          </ul>
+
+          <p>
+            <strong>Business Insight: </strong><br>
+            The high-dimensional, sparse feature space generated by TF-IDF favors linear classifiers over tree-based methods like XGBoost. 
+            This highlights the importance of selecting algorithms aligned with data characteristics, rather than defaulting to complex models.
+          </p>
+
+          <details class="more">
+            <summary><span style="background-color:#C0FFFF">Show Results (Logistic Regression, Naive Bayes, LinearSVC, XGBoost)</span></summary>
+              <h4>Logistic Regression vs. Naive Bayes:</h4>
+
               <figure class="project-figure">
-              <img src="image/amazon-reviews-sentiment/ConfusionMatrix_LR_NB.png" alt="CM of LR vs. NB" style="width:100%; height:auto;">
-              <figcaption>Confusion Matrix of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
+              <img src="image/amazon-reviews-sentiment/ROC_AUC_PR_AP.png" alt="LR vs. NB" style="width:80%; height:auto;">
+              <figcaption>ROC Curve & Precision-Recall Curve of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
               </figure>
 
-        </ul>
+              <h4>Support Vector Machins (LinearSVC):</h4>
+              <figure class="project-figure">
+              <img src="image/amazon-reviews-sentiment/LinearSVC_ROC_AUC_PR_AP.png" alt="LinearSVC" style="width:80%; height:auto;">
+              <figcaption>ROC Curve & Precision-Recall Curve of LinearSVC</figcaption>
+              </figure>
 
-        <p>
-          <strong>Business Insight: </strong><br>
-          The high-dimensional, sparse feature space generated by TF-IDF favors linear classifiers over tree-based methods like XGBoost. 
-          This highlights the importance of selecting algorithms aligned with data characteristics, rather than defaulting to complex models.
-        </p>
-
-        <details class="more">
-          <summary><span style="background-color:#C0FFFF">Show Results (Logistic Regression, Naive Bayes, LinearSVC, XGBoost)</span></summary>
-            <h4>Logistic Regression vs. Naive Bayes:</h4>
-
-            <figure class="project-figure">
-            <img src="image/amazon-reviews-sentiment/ROC_AUC_PR_AP.png" alt="LR vs. NB" style="width:80%; height:auto;">
-            <figcaption>ROC Curve & Precision-Recall Curve of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
-            </figure>
-
-            <h4>Support Vector Machins (LinearSVC):</h4>
-            <figure class="project-figure">
-            <img src="image/amazon-reviews-sentiment/LinearSVC_ROC_AUC_PR_AP.png" alt="LinearSVC" style="width:80%; height:auto;">
-            <figcaption>ROC Curve & Precision-Recall Curve of LinearSVC</figcaption>
-            </figure>
-
-            <h4>Tree-Based Model (XGBoost):</h4>
-            <figure class="project-figure">
-            <img src="image/amazon-reviews-sentiment/XGBoost_ROC_AUC_PR_AP.png" alt="XGBoost" style="width:80%; height:auto;">
-            <figcaption>ROC Curve & Precision-Recall Curve of XGBoost</figcaption>
-            </figure>            
-        </details>
-      </header>
+              <h4>Tree-Based Model (XGBoost):</h4>
+              <figure class="project-figure">
+              <img src="image/amazon-reviews-sentiment/XGBoost_ROC_AUC_PR_AP.png" alt="XGBoost" style="width:80%; height:auto;">
+              <figcaption>ROC Curve & Precision-Recall Curve of XGBoost</figcaption>
+              </figure>            
+          </details>
+        </header>
+      </section>
       <br><br>
 
 <!------------------------------------------------------>
       <!-- PROJECT 3) Marketing Campaign -->
       <section id="Marketing-Campaign">
-      <header class="project-header">
-        <h3>
-          Marketing Campaign Effect
-          <span class="year">2025</span>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub</a>
+        <header class="project-header">
+          <h3>
+            Marketing Campaign Effect
+            <span class="year">2025</span>
+            <!-- Github link -->
+            <div class="links">
+              <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <div class="links">
+              <a class="btn" href="https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign" target="_blank" rel="noopener">Dataset</a>
+            </div>
+          </h3>
+          <br>
+          <!-- Key words -->
+          <div class="tags">
+          <span style="background-color:#f6cbd7"> Welch's t-test </span> <span style="background-color:#d2f8e4"> Bayesian A/B Test </span>
+          <span style="background-color:#f6cbd7"> Posterior Inference </span> <span style="background-color:#d2f8e4"> PSM </span>
+          <span style="background-color:#f6cbd7"> ATT </span> <span style="background-color:#d2f8e4"> SMD </span>
+          <span style="background-color:#f6cbd7"> Feature Engineering </span> 
           </div>
-          <div class="links">
-            <a class="btn" href="https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign" target="_blank" rel="noopener">Dataset</a>
-          </div>
-        </h3>
-        <br>
-        <!-- Key words -->
-        <div class="tags">
-        <span style="background-color:#f6cbd7"> Welch's t-test </span> <span style="background-color:#d2f8e4"> Bayesian A/B Test </span>
-        <span style="background-color:#f6cbd7"> Posterior Inference </span> <span style="background-color:#d2f8e4"> PSM </span>
-        <span style="background-color:#f6cbd7"> ATT </span> <span style="background-color:#d2f8e4"> SMD </span>
-        <span style="background-color:#f6cbd7"> Feature Engineering </span> 
-        </div>
-        <br>
+          <br>
 
-        <!-- Project Summry -->
-        <ul class="bullets">
-          <li><strong>Goal:</strong> Measure and validate the true effectiveness of a marketing campaign beyond raw response counts.</li>
-          <li><strong>Data:</strong> 
-            <ul>
-              <li>Customer demographics: age, income, household with kids, etc.</li>
-              <li>Marketing history: prior campaign acceptance (aggregated features)</li>
-              <li>Spending behavior: Total Spend (key performance indicator)</li>
-            </ul>
-          </li>
-
-        <!-- Data Figure -->
-        <figure class="project-figure">
-          <img src="image/marketing-campaigns/box_plot_totalspend_response.png" 
-              alt="Comparison"
-              style="width: 50%; height: auto;"  />
-          <figcaption>Total Spend by Campaign Response</figcaption>
-        </figure>
-        <br>
-
-          <li><strong>Method:</strong>
-            <ul>
-              <li>Feature Engineering: Created response features via one-hot encoding & aggregation</li>
-              <li>Statistical Testing: Conducted Welch’s t-test, validated consistency with a Bayesian A/B test</li>
-              <li>Causal Inference: Applied Propensity Score Matching (11 covariates, 334 matched pairs)</li>
+          <!-- Project Summry -->
+          <ul class="bullets">
+            <li><strong>Goal:</strong> Measure and validate the true effectiveness of a marketing campaign beyond raw response counts.</li>
+            <li><strong>Data:</strong> 
               <ul>
-                <li>Explored Caliper adjustment</li>
-                <li>Compared methodologies: Logistic Regression vs. XGBoost</li>
+                <li>Customer demographics: age, income, household with kids, etc.</li>
+                <li>Marketing history: prior campaign acceptance (aggregated features)</li>
+                <li>Spending behavior: Total Spend (key performance indicator)</li>
               </ul>
-              <li>Covariate Balance: Evaluated with Standardized Mean Differences (SMD) and proposed refinements</li>
-              <li>Uplift Modeling: Estimated CATE (Conditional Average Treatment Effect) to identify persuadable customers</li>
-            </ul>
-          </li>
-          <li><strong>Results:</strong>
-            <ul>
-              <li>Statistical Tests
+            </li>
+
+          <!-- Data Figure -->
+          <figure class="project-figure">
+            <img src="image/marketing-campaigns/box_plot_totalspend_response.png" 
+                alt="Comparison"
+                style="width: 50%; height: auto;"  />
+            <figcaption>Total Spend by Campaign Response</figcaption>
+          </figure>
+          <br>
+
+            <li><strong>Method:</strong>
+              <ul>
+                <li>Feature Engineering: Created response features via one-hot encoding & aggregation</li>
+                <li>Statistical Testing: Conducted Welch’s t-test, validated consistency with a Bayesian A/B test</li>
+                <li>Causal Inference: Applied Propensity Score Matching (11 covariates, 334 matched pairs)</li>
                 <ul>
-                  <li>Significant campaign effect: t = 10.87, p ≈ 0.0</li>
-                  <li>Bayesian posterior estimates aligned with frequentist results → confirms robustness</li>
-                  <li>ATT = 228.76 after controlling for confounders</li>
+                  <li>Explored Caliper adjustment</li>
+                  <li>Compared methodologies: Logistic Regression vs. XGBoost</li>
                 </ul>
-              </li>
-              <li>Propensity Score Matching (SMD)
-                <ul>
-                  <li>Identified high-imbalance features (e.g., AcceptedCnt)</li>
-                  <li>SMD improvements:</li>
+                <li>Covariate Balance: Evaluated with Standardized Mean Differences (SMD) and proposed refinements</li>
+                <li>Uplift Modeling: Estimated CATE (Conditional Average Treatment Effect) to identify persuadable customers</li>
+              </ul>
+            </li>
+            <li><strong>Results:</strong>
+              <ul>
+                <li><strong>Statistical Tests:</strong>
                   <ul>
-                    <li>Base: 0.186 -> With Caliper: 0.168 -> With XGBoost: 0.141</li>
+                    <li>Significant campaign effect: t = 10.87, p ≈ 0.0</li>
+                    <li>Bayesian posterior estimates aligned with frequentist results → confirms robustness</li>
+                    <li>ATT = 228.76 after controlling for confounders</li>
                   </ul>
-                  <li>Some features remain hard to match</li>
-                  <li>SMD Before & After (with XGBoost): See <span style="background-color:#C0FFFF">Show Results</span></li>
-                </ul>
-              </li>
-              <li>Uplift Model: See <span style="background-color:#C0FFFF">Show Results</span>
-                <ul>
-                  <li>Predicted CATE scores (Top 5):  [-72.47, -9.18, 43.36, 5.91, 53.13]</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>Key Takeaways
-            <ul>
-              <li>Campaign demonstrated statistical and causal effectiveness.</li>
-              <li>PSM with caliper and advanced models improved balance, though challenges remained for certain features.</li>
-              <li>Uplift modeling provided insights into customer heterogeneity, highlighting which customers are most persuadable.</li>
-            </ul>
-          </li>
+                </li>
+                <li><strong>Propensity Score Matching (SMD):</strong>
+                  <ul>
+                    <li>Identified high-imbalance features (e.g., AcceptedCnt)</li>
+                    <li>SMD improvements:</li>
+                    <ul>
+                      <li>Base: 0.186 -> With Caliper: 0.168 -> With XGBoost: 0.141</li>
+                    </ul>
+                    <li>Some features remain hard to match</li>
+                    <li>SMD Before & After (with XGBoost): Figures in <span style="background-color:#C0FFFF">Show Results</span></li>
+                  </ul>
+                </li>
+                <li><strong>Uplift Model:</strong> Figures in <span style="background-color:#C0FFFF">Show Results</span>
+                  <ul>
+                    <li>Predicted CATE scores (Top 5):  [-72.47, -9.18, 43.36, 5.91, 53.13]</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><string>Key Takeaways</string>
+              <ul>
+                <li>Campaign demonstrated statistical and causal effectiveness.</li>
+                <li>PSM with caliper and advanced models improved balance, though challenges remained for certain features.</li>
+                <li>Uplift modeling provided insights into customer heterogeneity, highlighting which customers are most persuadable.</li>
+              </ul>
+            </li>
 
-        <details class="more">
-          <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
-            <h4>Bayesian A/B Testing:</h4>
-            <figure class="project-figure">
-            <img src="image/marketing-campaigns/posterior_distribution_B_over_A.png" alt="B over A" style="width:65%; height:auto;">
-            <figcaption>Posterior Distribution of the Difference</figcaption>
-            </figure>
+          <details class="more">
+            <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
+              <h4>Bayesian A/B Testing:</h4>
+              <figure class="project-figure">
+              <img src="image/marketing-campaigns/posterior_distribution_B_over_A.png" alt="B over A" style="width:65%; height:auto;">
+              <figcaption>Posterior Distribution of the Difference</figcaption>
+              </figure>
 
-            <h4>Propensity Score:</h4>
-            <figure class="project-figure">
-            <img src="image/marketing-campaigns/propensity_score_distribution.png" alt="Propensity Score" style="width:80%; height:auto;">
-            <figcaption>Propensity Score Distribution Before and After Matching</figcaption>
-            </figure>
-            
-            <h4>PSM-SMD:</h4>
-            <figure class="project-figure">
-            <img src="image/marketing-campaigns/covariate_balance_before_after_PSM.png" alt="SMD" style="width:75%; height:auto;">
-            <figcaption>SMD of Covariates Before & After PSM</figcaption>
-            </figure>
+              <h4>Propensity Score:</h4>
+              <figure class="project-figure">
+              <img src="image/marketing-campaigns/propensity_score_distribution.png" alt="Propensity Score" style="width:80%; height:auto;">
+              <figcaption>Propensity Score Distribution Before and After Matching</figcaption>
+              </figure>
+              
+              <h4>PSM-SMD:</h4>
+              <figure class="project-figure">
+              <img src="image/marketing-campaigns/covariate_balance_before_after_PSM.png" alt="SMD" style="width:75%; height:auto;">
+              <figcaption>SMD of Covariates Before & After PSM</figcaption>
+              </figure>
 
-            <h4>PSM-SMD with XGBoost:</h4>
-            <figure class="project-figure">
-            <img src="image/marketing-campaigns/smd_xgboost.png" alt="SMD" style="width:75%; height:auto;">
-            <figcaption>SMD of Covariates Before & After PSM with XGBoost</figcaption>
-            </figure>
+              <h4>PSM-SMD with XGBoost:</h4>
+              <figure class="project-figure">
+              <img src="image/marketing-campaigns/smd_xgboost.png" alt="SMD" style="width:75%; height:auto;">
+              <figcaption>SMD of Covariates Before & After PSM with XGBoost</figcaption>
+              </figure>
 
-            <h4>Distribution of Predicted CATE Scores:</h4>
-            <p>
-            Customers with positive uplift (Persuadables) are clear on the right tail, while negative uplift (Sleeping Dogs) appear on the left. 
-            This highlights which segments benefit from targeting and which should be excluded.
-            </p>
-            <figure class="project-figure">
-            <img src="image/marketing-campaigns/predicted_CATE_distribution.png" alt="SMD" style="width:65%; height:auto;">
-            <figcaption>Distribution of Predicted CATE Scores</figcaption>
-            </figure>
+              <h4>Distribution of Predicted CATE Scores:</h4>
+              <p>
+              Customers with positive uplift (Persuadables) are clear on the right tail, while negative uplift (Sleeping Dogs) appear on the left. 
+              This highlights which segments benefit from targeting and which should be excluded.
+              </p>
+              <figure class="project-figure">
+              <img src="image/marketing-campaigns/predicted_CATE_distribution.png" alt="SMD" style="width:65%; height:auto;">
+              <figcaption>Distribution of Predicted CATE Scores</figcaption>
+              </figure>
 
-            <h4>Cumulative Uplift Curve:</h4>
-            <p>
-            Targeting the top 10–30% of customers ranked by uplift score yields significantly higher gains compared to random targeting (e.g., ~746 vs. ~450). 
-            Beyond ~60%, returns diminish and performance can fall below random, suggesting optimal targeting thresholds.
-            </p>
-            <figure class="project-figure">
-            <img src="image/marketing-campaigns/Uplift_Curve.png" alt="SMD" style="width:65%; height:auto;">
-            <figcaption>Cumulative Uplift Curve</figcaption>
-            </figure>
-        </details>
+              <h4>Cumulative Uplift Curve:</h4>
+              <p>
+              Targeting the top 10–30% of customers ranked by uplift score yields significantly higher gains compared to random targeting (e.g., ~746 vs. ~450). 
+              Beyond ~60%, returns diminish and performance can fall below random, suggesting optimal targeting thresholds.
+              </p>
+              <figure class="project-figure">
+              <img src="image/marketing-campaigns/Uplift_Curve.png" alt="SMD" style="width:65%; height:auto;">
+              <figcaption>Cumulative Uplift Curve</figcaption>
+              </figure>
+          </details>
       </section>
       <br><br>
 
 <!------------------------------------------------------>
       <!-- PROJECT 3) SQL DATA E-COMMERCE -->
-      <header class="project-header">
-        <h3>
-          Retail E-commerce SQL Analytics
-          <span class="year">2025</span>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/sql-retail-analytics" target="_blank" rel="noopener">GitHub</a>
+      <section id="SQL">
+        <header class="project-header">
+          <h3>
+            Retail E-commerce SQL Analytics
+            <span class="year">2025</span>
+            <!-- Github link -->
+            <div class="links">
+              <a class="btn" href="https://github.com/Yeonji-Ji/sql-retail-analytics" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </h3>
+          <br>
+          <!-- Key words -->
+          <div class="tags">
+            <span style="background-color:#f6cbd7"> SQL </span> <span style="background-color:#d2f8e4"> SQLite </span>
+            <span style="background-color:#f6cbd7"> Data Cleaning </span> <span style="background-color:#d2f8e4"> Visualization </span>
           </div>
-        </h3>
-        <br>
-        <!-- Key words -->
-        <div class="tags">
-          <span style="background-color:#f6cbd7"> SQL </span> <span style="background-color:#d2f8e4"> SQLite </span>
-          <span style="background-color:#f6cbd7"> Data Cleaning </span> <span style="background-color:#d2f8e4"> Visualization </span>
-        </div>
-        <br>
-      <!-- Project Summry -->
-        <ul class="bullets">
-          <li><strong>Goal:</strong> Designed a reproducible SQL analytics pipeline on UK Online Retail data</li>
-          <li><strong>Approach:</strong> Built clean data, monthly revenue dashboards, Top-N customer/product insights, and new vs. returning customer retention analysis</li>
-          <li><strong>Outcome:</strong>
-            <ul>
-              <li>Strong <strong>seasonality</strong> with Q4 spikes</li>
-              <li><strong>Pareto effect</strong>: Top ~10% customers generate ~60% revenue</li>
-              <li>Returning customers drive consistent revenue, highlighting <strong>retention</strong> as a key business driver</li>
-              <li>Certain countries outperform, suggesing <strong>geography targeted marketing</strong> potential</li>
-            </ul>
-          </li>
-        </ul>
-        <figure class="project-figure">
-          <img src="image/sql-ecommerce/sql-ecommerce-fig_monthly_revenue.png" alt="Monthly Revenue Trend" style="max-width:450px; width:100%; height:auto;">
-          <figcaption>Monthly Revenue Trend</figcaption>
-        </figure>
+          <br>
+        <!-- Project Summry -->
+          <ul class="bullets">
+            <li><strong>Goal:</strong> Designed a reproducible SQL analytics pipeline on UK Online Retail data</li>
+            <li><strong>Approach:</strong> Built clean data, monthly revenue dashboards, Top-N customer/product insights, and new vs. returning customer retention analysis</li>
+            <li><strong>Outcome:</strong>
+              <ul>
+                <li>Strong <strong>seasonality</strong> with Q4 spikes</li>
+                <li><strong>Pareto effect</strong>: Top ~10% customers generate ~60% revenue</li>
+                <li>Returning customers drive consistent revenue, highlighting <strong>retention</strong> as a key business driver</li>
+                <li>Certain countries outperform, suggesing <strong>geography targeted marketing</strong> potential</li>
+              </ul>
+            </li>
+          </ul>
+          <figure class="project-figure">
+            <img src="image/sql-ecommerce/sql-ecommerce-fig_monthly_revenue.png" alt="Monthly Revenue Trend" style="max-width:450px; width:100%; height:auto;">
+            <figcaption>Monthly Revenue Trend</figcaption>
+          </figure>
 
-        <figure class="project-figure">
-          <img src="image/sql-ecommerce/sql-ecommerce-fig_new_vs_return.png" alt="New vs Returning Customers" style="max-width:450px; width:100%; height:auto;">
-          <figcaption>New vs Returning Customers</figcaption>
-        </figure>
+          <figure class="project-figure">
+            <img src="image/sql-ecommerce/sql-ecommerce-fig_new_vs_return.png" alt="New vs Returning Customers" style="max-width:450px; width:100%; height:auto;">
+            <figcaption>New vs Returning Customers</figcaption>
+          </figure>
 
-        <figure class="project-figure">
-          <img src="image/sql-ecommerce/sql-ecommerce-fig_top_customers.png" alt="Top 10 Customers" style="max-width:450px; width:100%; height:auto;">
-          <figcaption>Top 10 Customers</figcaption>
-        </figure>
-      </header>
+          <figure class="project-figure">
+            <img src="image/sql-ecommerce/sql-ecommerce-fig_top_customers.png" alt="Top 10 Customers" style="max-width:450px; width:100%; height:auto;">
+            <figcaption>Top 10 Customers</figcaption>
+          </figure>
+        </header>
+      </section>
       <br><br>
 
-<!------------------------------------------------------>
+
       <!-- Telco: 상세 카드 (비즈니스 맥락 + 시각 요소 + 세부 내용) -->
-      <header class="project-header">
-        <h3>
-          Telco Customer Churn Prediction
-          <span class="year">2025</span>
-          <!-- Github link -->
-          <div class="links">
-            <a class="btn" href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction" target="_blank" rel="noopener">GitHub</a>
+      <section id="Churn">
+        <header class="project-header">
+          <h3>
+            Telco Customer Churn Prediction
+            <span class="year">2025</span>
+            <!-- Github link -->
+            <div class="links">
+              <a class="btn" href="https://github.com/Yeonji-Ji/telco-customer-churn-prediction" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </h3>
+          <br>
+          <!-- Key words -->
+          <div class="tags">
+            <span style="background-color:#f6cbd7"> Churn </span> <span style="background-color:#d2f8e4"> Imbalanced Data </span>
+            <span style="background-color:#f6cbd7"> SMOTE </span> <span style="background-color:#d2f8e4"> XGBoost </span>
+            <span style="background-color:#f6cbd7"> Logistic Regression </span> <span style="background-color:#d2f8e4"> Random Forest </span>
+            <span style="background-color:#f6cbd7"> EDA </span> <span style="background-color:#d2f8e4"> Feature Engineering </span>
           </div>
-        </h3>
-        <br>
-        <!-- Key words -->
-        <div class="tags">
-          <span style="background-color:#f6cbd7"> Churn </span> <span style="background-color:#d2f8e4"> Imbalanced Data </span>
-          <span style="background-color:#f6cbd7"> SMOTE </span> <span style="background-color:#d2f8e4"> XGBoost </span>
-          <span style="background-color:#f6cbd7"> Logistic Regression </span> <span style="background-color:#d2f8e4"> Random Forest </span>
-          <span style="background-color:#f6cbd7"> EDA </span> <span style="background-color:#d2f8e4"> Feature Engineering </span>
-        </div>
-      
+        
 
-      <!-- Pipeline Figure -->
-      <!-- <figure class="project-figure">
-        <img src="image/diagram/Movielens25M.drawio.png" alt="Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation" />
-        <figcaption>Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation</figcaption>
-      </figure> -->
+        <!-- Pipeline Figure -->
+        <!-- <figure class="project-figure">
+          <img src="image/diagram/Movielens25M.drawio.png" alt="Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation" />
+          <figcaption>Telco churn pipeline: Ingestion → EDA → Feature Engineering → Modeling → Evaluation</figcaption>
+        </figure> -->
 
-      <!-- 핵심 요약 (비즈니스 임팩트 중심) -->
-        <ul class="bullets">
-          <li><strong>Goal:</strong> Identify high-risk customers early to guide retention campaigns and reduce churn.</li>
-          <li><strong>Data:</strong> 7k+ customer records with plan/contract/payment/service features; label: churn (yes/no).</li>
-          <li><strong>Approach:</strong> EDA → categorical encoding & usage-based features (tenure buckets, service bundles) → models (LogReg/RF/XGB) → SMOTE for imbalance → threshold tuning.</li>
-          <li><strong>Evaluation:</strong> Compare <em>Recall/AUC</em> across models; select business-friendly operating point for retention budget.</li>
-          <li><strong>Outcome:</strong> XGBoost AUC ↑ to 0.85; recall at 0.77 with precision trade-off optimized for campaign cost.</li>
-        </ul>
+        <!-- 핵심 요약 (비즈니스 임팩트 중심) -->
+          <ul class="bullets">
+            <li><strong>Goal:</strong> Identify high-risk customers early to guide retention campaigns and reduce churn.</li>
+            <li><strong>Data:</strong> 7k+ customer records with plan/contract/payment/service features; label: churn (yes/no).</li>
+            <li><strong>Approach:</strong> EDA → categorical encoding & usage-based features (tenure buckets, service bundles) → models (LogReg/RF/XGB) → SMOTE for imbalance → threshold tuning.</li>
+            <li><strong>Evaluation:</strong> Compare <em>Recall/AUC</em> across models; select business-friendly operating point for retention budget.</li>
+            <li><strong>Outcome:</strong> XGBoost AUC ↑ to 0.85; recall at 0.77 with precision trade-off optimized for campaign cost.</li>
+          </ul>
 
-      <!-- 인사이트 시각화: 썸네일 3개 그리드 -->
-      <!-- <div class="thumb-grid">
-        <figure>
-          <img src="image/telco_feature_importance.png" alt="Feature importance bar chart" />
-          <figcaption>Top Features (e.g., contract type, monthly charges, tenure)</figcaption>
-        </figure>
-        <figure>
-          <img src="image/telco_churn_by_segment.png" alt="Churn rate by segment plot" />
-          <figcaption>Churn by Segment (e.g., month-to-month vs two-year)</figcaption>
-        </figure>
-        <figure>
-          <img src="image/telco_model_metrics.png" alt="Model comparison table/ROC curves" />
-          <figcaption>Model Comparison (ROC / AUC / Recall)</figcaption>
-        </figure>
-      </div> -->
+        <!-- 인사이트 시각화: 썸네일 3개 그리드 -->
+        <!-- <div class="thumb-grid">
+          <figure>
+            <img src="image/telco_feature_importance.png" alt="Feature importance bar chart" />
+            <figcaption>Top Features (e.g., contract type, monthly charges, tenure)</figcaption>
+          </figure>
+          <figure>
+            <img src="image/telco_churn_by_segment.png" alt="Churn rate by segment plot" />
+            <figcaption>Churn by Segment (e.g., month-to-month vs two-year)</figcaption>
+          </figure>
+          <figure>
+            <img src="image/telco_model_metrics.png" alt="Model comparison table/ROC curves" />
+            <figcaption>Model Comparison (ROC / AUC / Recall)</figcaption>
+          </figure>
+        </div> -->
 
-      <!-- 접었다 펼치는 상세: 데이터/모델링/재현성 -->
-        <details class="more">
-          <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
-          <div class="cols">
-            <div>
-              <h4>Data & EDA</h4>
-              <ul>
-                <li>Handled missing values; normalized numeric; encoded categorical (one-hot/ordinal).</li>
-                <li>Explored churn distribution by service bundle (Fiber, TechSupport, OnlineSecurity).</li>
-                <li>Created features: <code>tenure_bin</code>, <code>charges_per_service</code>, <code>contract_risk</code>.</li>
-              </ul>
+        <!-- 접었다 펼치는 상세: 데이터/모델링/재현성 -->
+          <details class="more">
+            <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
+            <div class="cols">
+              <div>
+                <h4>Data & EDA</h4>
+                <ul>
+                  <li>Handled missing values; normalized numeric; encoded categorical (one-hot/ordinal).</li>
+                  <li>Explored churn distribution by service bundle (Fiber, TechSupport, OnlineSecurity).</li>
+                  <li>Created features: <code>tenure_bin</code>, <code>charges_per_service</code>, <code>contract_risk</code>.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Modeling & Tuning</h4>
+                <ul>
+                  <li>Baselines (LogReg) → tree models (RF/XGBoost) with randomized/grid search.</li>
+                  <li>Imbalance handling: <code>SMOTE</code>, class weights, threshold optimization for recall.</li>
+                  <li>Metrics: AUC/ROC, Recall@Policy (budget-constrained targeting), PR curve.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Reproducibility</h4>
+                <ul>
+                  <li>Clear train/validation/test split; random seeds pinned.</li>
+                  <li>Modular scripts/notebooks; requirements pinned in <code>requirements.txt</code>.</li>
+                  <li>Plots saved to <code>assets/</code>; results summary table exported as HTML/PNG.</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4>Modeling & Tuning</h4>
-              <ul>
-                <li>Baselines (LogReg) → tree models (RF/XGBoost) with randomized/grid search.</li>
-                <li>Imbalance handling: <code>SMOTE</code>, class weights, threshold optimization for recall.</li>
-                <li>Metrics: AUC/ROC, Recall@Policy (budget-constrained targeting), PR curve.</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Reproducibility</h4>
-              <ul>
-                <li>Clear train/validation/test split; random seeds pinned.</li>
-                <li>Modular scripts/notebooks; requirements pinned in <code>requirements.txt</code>.</li>
-                <li>Plots saved to <code>assets/</code>; results summary table exported as HTML/PNG.</li>
-              </ul>
-            </div>
-          </div>
-        </details>
-      </header>
+          </details>
+        </header>
+      </section>
+<!------------------------------------------------------>
     </article>
 </section>
