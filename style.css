@@ -7,8 +7,8 @@ body {
   padding-top: 100px;
   font-size: 15px;
   line-height: 1.6;
-  background-color: #f6ecdd;
-  color: #482c06;
+  background-color: #decaf4;
+  color: #0f042f;
 }
 
 section,
@@ -36,8 +36,8 @@ h3 {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #482c06;
-  border-bottom: 1px solid #ccc;
+  background-color: #552bd2;
+  border-bottom: 1px solid #decaf4;
   display: flex;
   justify-content: space-between;
   align-items: center;
