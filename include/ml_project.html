@@ -1,6 +1,7 @@
 <section id="MLprojects">
   <h2>Machine Learning Projects</h2>
     <article class="project-card">
+      <a href="#Marketing-Campaign">Marketing Campaign</a>
       <!-- PROJECT 1) MOVIELENS 25M RECOMMENDATION -->
       <header class="project-header">
         <h3>
@@ -57,6 +58,7 @@
       </header>
       <br><br>
 
+<!------------------------------------------------------>
       <!-- PROJECT 2) AMAZON REVIEW SENTIMENT -->
       <header class="project-header">
         <h3>
@@ -140,7 +142,9 @@
       </header>
       <br><br>
 
-      <!-- PROJECT 3) Marketing -->
+<!------------------------------------------------------>
+      <!-- PROJECT 3) Marketing Campaign -->
+      <section id="Marketing-Campaign">
       <header class="project-header">
         <h3>
           Marketing Campaign Effect
@@ -148,6 +152,9 @@
           <!-- Github link -->
           <div class="links">
             <a class="btn" href="https://github.com/Yeonji-Ji/movielens-25m-recsys" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign" target="_blank" rel="noopener">Dataset</a>
           </div>
         </h3>
         <br>
@@ -165,9 +172,9 @@
           <li><strong>Goal:</strong> Measure and validate the true effectiveness of a marketing campaign beyond raw response counts.</li>
           <li><strong>Data:</strong> 
             <ul>
-              <li>Customer demographics (age, income, kid home, etc.)</li>
-              <li>Prior marketing campaign acceptance history (aggregated as features)</li>
-              <li>Spending data (Total Spend) as a key performance indicator</li>
+              <li>Customer demographics: age, income, household with kids, etc.</li>
+              <li>Marketing history: prior campaign acceptance (aggregated features)</li>
+              <li>Spending behavior: Total Spend (key performance indicator)</li>
             </ul>
           </li>
 
@@ -175,51 +182,109 @@
         <figure class="project-figure">
           <img src="image/marketing-campaigns/box_plot_totalspend_response.png" 
               alt="Comparison"
-              style="width: 60%; height: auto;"  />
+              style="width: 50%; height: auto;"  />
           <figcaption>Total Spend by Campaign Response</figcaption>
         </figure>
         <br>
 
           <li><strong>Method:</strong>
             <ul>
-              <li>Engineered response features via one-hot encoding & aggregation</li>
-              <li>Conducted Welch’s t-test and validated consistency with a Bayesian A/B test</li>
-              <li>Applied Propensity Score Matching (11 covariates, 334 matched pairs) to isolate causal effects</li>
-              <li>Evaluated covariate balance with Standardized Mean Differences (SMD) and proposed refinements</li>
+              <li>Feature Engineering: Created response features via one-hot encoding & aggregation</li>
+              <li>Statistical Testing: Conducted Welch’s t-test, validated consistency with a Bayesian A/B test</li>
+              <li>Causal Inference: Applied Propensity Score Matching (11 covariates, 334 matched pairs)</li>
+              <ul>
+                <li>Explored Caliper adjustment</li>
+                <li>Compared methodologies: Logistic Regression vs. XGBoost</li>
+              </ul>
+              <li>Covariate Balance: Evaluated with Standardized Mean Differences (SMD) and proposed refinements</li>
+              <li>Uplift Modeling: Estimated CATE (Conditional Average Treatment Effect) to identify persuadable customers</li>
             </ul>
           </li>
           <li><strong>Results:</strong>
             <ul>
-              <li>Statistically significant campaign effect (t=10.87, p~0.0)</li>
-              <li>Posterior estimates aligned with frequentist results, confirming robustness</li>
-              <li>Pure treatment effect estimated (ATT=228.76) after controlling for confounders</li>
-              <li>Identified high-imbalance features (e.g., AcceptedCnt) and recommended adjustments for cleaner causal interpretation</li>
+              <li>Statistical Tests
+                <ul>
+                  <li>Significant campaign effect: t = 10.87, p ≈ 0.0</li>
+                  <li>Bayesian posterior estimates aligned with frequentist results → confirms robustness</li>
+                  <li>ATT = 228.76 after controlling for confounders</li>
+                </ul>
+              </li>
+              <li>Propensity Score Matching (SMD)
+                <ul>
+                  <li>Identified high-imbalance features (e.g., AcceptedCnt)</li>
+                  <li>SMD improvements:</li>
+                  <ul>
+                    <li>Base: 0.186 -> With Caliper: 0.168 -> With XGBoost: 0.141</li>
+                  </ul>
+                  <li>Some features remain hard to match</li>
+                  <li>SMD Before & After (with XGBoost): See <span style="background-color:#C0FFFF">Show Results</span></li>
+                </ul>
+              </li>
+              <li>Uplift Model: See <span style="background-color:#C0FFFF">Show Results</span>
+                <ul>
+                  <li>Predicted CATE scores (Top 5):  [-72.47, -9.18, 43.36, 5.91, 53.13]</li>
+                </ul>
+              </li>
             </ul>
           </li>
-        </ul>
+          <li>Key Takeaways
+            <ul>
+              <li>Campaign demonstrated statistical and causal effectiveness.</li>
+              <li>PSM with caliper and advanced models improved balance, though challenges remained for certain features.</li>
+              <li>Uplift modeling provided insights into customer heterogeneity, highlighting which customers are most persuadable.</li>
+            </ul>
+          </li>
 
         <details class="more">
           <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
             <h4>Bayesian A/B Testing:</h4>
             <figure class="project-figure">
-            <img src="image/marketing-campaigns/posterior_distribution_B_over_A.png" alt="B over A" style="width:80%; height:auto;">
+            <img src="image/marketing-campaigns/posterior_distribution_B_over_A.png" alt="B over A" style="width:65%; height:auto;">
             <figcaption>Posterior Distribution of the Difference</figcaption>
-            </figure>
-
-            <h4>PSM-SMD:</h4>
-            <figure class="project-figure">
-            <img src="image/marketing-campaigns/covariate_balance_before_after_PSM.png" alt="SMD" style="width:80%; height:auto;">
-            <figcaption>SMD of Covariates Before & After PSM</figcaption>
             </figure>
 
             <h4>Propensity Score:</h4>
             <figure class="project-figure">
             <img src="image/marketing-campaigns/propensity_score_distribution.png" alt="Propensity Score" style="width:80%; height:auto;">
             <figcaption>Propensity Score Distribution Before and After Matching</figcaption>
-            </figure>            
+            </figure>
+            
+            <h4>PSM-SMD:</h4>
+            <figure class="project-figure">
+            <img src="image/marketing-campaigns/covariate_balance_before_after_PSM.png" alt="SMD" style="width:75%; height:auto;">
+            <figcaption>SMD of Covariates Before & After PSM</figcaption>
+            </figure>
+
+            <h4>PSM-SMD with XGBoost:</h4>
+            <figure class="project-figure">
+            <img src="image/marketing-campaigns/smd_xgboost.png" alt="SMD" style="width:75%; height:auto;">
+            <figcaption>SMD of Covariates Before & After PSM with XGBoost</figcaption>
+            </figure>
+
+            <h4>Distribution of Predicted CATE Scores:</h4>
+            <p>
+            Customers with positive uplift (Persuadables) are clear on the right tail, while negative uplift (Sleeping Dogs) appear on the left. 
+            This highlights which segments benefit from targeting and which should be excluded.
+            </p>
+            <figure class="project-figure">
+            <img src="image/marketing-campaigns/predicted_CATE_distribution.png" alt="SMD" style="width:65%; height:auto;">
+            <figcaption>Distribution of Predicted CATE Scores</figcaption>
+            </figure>
+
+            <h4>Cumulative Uplift Curve:</h4>
+            <p>
+            Targeting the top 10–30% of customers ranked by uplift score yields significantly higher gains compared to random targeting (e.g., ~746 vs. ~450). 
+            Beyond ~60%, returns diminish and performance can fall below random, suggesting optimal targeting thresholds.
+            </p>
+            <figure class="project-figure">
+            <img src="image/marketing-campaigns/Uplift_Curve.png" alt="SMD" style="width:65%; height:auto;">
+            <figcaption>Cumulative Uplift Curve</figcaption>
+            </figure>
         </details>
+      </section>
       <br><br>
 
+<!------------------------------------------------------>
       <!-- PROJECT 3) SQL DATA E-COMMERCE -->
       <header class="project-header">
         <h3>
@@ -267,6 +332,7 @@
       </header>
       <br><br>
 
+<!------------------------------------------------------>
       <!-- Telco: 상세 카드 (비즈니스 맥락 + 시각 요소 + 세부 내용) -->
       <header class="project-header">
         <h3>
