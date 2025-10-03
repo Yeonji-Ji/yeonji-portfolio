@@ -7,7 +7,7 @@ body {
   padding-top: 100px;
   font-size: 15px;
   line-height: 1.6;
-  background-color: #eee2fc;
+  background-color: #f1e6fb;
   color: #0f042f;
 }
 
@@ -36,8 +36,8 @@ h3 {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #e0caf9;
-  border-bottom: 1px solid #0f042f;
+  background-color: #e1d1ff;
+  border-bottom: 1px solid #e1d1ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,7 +55,7 @@ h3 {
 .navbar h1 {
   margin: 0;
   font-size: 1.8rem;
-  color: #f6ecdd;
+  color: #0f042f;
 }
 
 .navbar .subtitle {
