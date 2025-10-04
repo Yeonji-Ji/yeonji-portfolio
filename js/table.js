@@ -1,20 +1,25 @@
-document.addEventListener('DOMContentLoaded', async () => {
-const targets = document.querySelectorAll('[data-include]');
-const toAbs = (path) => new URL(path, document.baseURI).toString();
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('[data-include]').forEach(el => {
+    const file = el.getAttribute('data-include');
+    if (!file) return;
 
-await Promise.all([...targets].map(async el => {
-  const rel = el.getAttribute('data-include');
-  const url = toAbs(rel);
-  try {
-    const res = await fetch(url, { cache: 'no-cache' });
-    if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
-    el.innerHTML = await res.text();
-  } catch (e) {
-    el.innerHTML = `<div style="color:#c00">Failed to load: ${rel}</div>`;
-    console.error('Include error:', rel, e);
-  }
-}));
+    const url = new URL(file, window.location.href);
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) throw new Error("File not found: " + url);
+        return response.text();
+      })
+      .then(data => {
+        el.innerHTML = data;
+      })
+      .catch(err => {
+        el.innerHTML = `<p style="color:red;">Error loading ${file}</p>`;
+        console.error(err);
+      });
+  });
 });
+
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   document.querySelectorAll('[data-include]').forEach(el => {
