@@ -312,7 +312,7 @@
             <span style="background-color:#f6cbd7"> Churn </span> <span style="background-color:#d2f8e4"> Imbalanced Data </span>
             <span style="background-color:#f6cbd7"> SMOTE </span> <span style="background-color:#d2f8e4"> XGBoost </span>
             <span style="background-color:#f6cbd7"> Logistic Regression </span> <span style="background-color:#d2f8e4"> Random Forest </span>
-            <span style="background-color:#f6cbd7"> EDA </span> <span style="background-color:#d2f8e4"> Feature Engineering </span>
+            <span style="background-color:#f6cbd7"> LightGBM </span> <span style="background-color:#d2f8e4"> Feature Engineering </span>
           </div>
         
 
@@ -324,58 +324,84 @@
 
         <!-- 핵심 요약 (비즈니스 임팩트 중심) -->
           <ul class="bullets">
-            <li><strong>Goal:</strong> Identify high-risk customers early to guide retention campaigns and reduce churn.</li>
-            <li><strong>Data:</strong> 7k+ customer records with plan/contract/payment/service features; label: churn (yes/no).</li>
-            <li><strong>Approach:</strong> EDA → categorical encoding & usage-based features (tenure buckets, service bundles) → models (LogReg/RF/XGB) → SMOTE for imbalance → threshold tuning.</li>
-            <li><strong>Evaluation:</strong> Compare <em>Recall/AUC</em> across models; select business-friendly operating point for retention budget.</li>
-            <li><strong>Outcome:</strong> XGBoost AUC ↑ to 0.85; recall at 0.77 with precision trade-off optimized for campaign cost.</li>
+              <li><strong>Goal:</strong>Develop predictive models to identify telecom customers at risk of churn, 
+                enabling proactive retention strategies and improved customer lifetime value.
+              </li>
+              <li><strong>Data:</strong> 
+                <ul>
+                  <li>Customer demographics: gender, age range, partner, dependents</li>
+                  <li>Customer account: tenure, contract type, payment method, billing, charges</li>
+                  <li>Services subscribed: phone, internet, online security, backup, device protection, tech support, streaming services</li>
+                  <li>Churn: whether the customer left in the last month</li>
+                </ul>
+              </li>
+
+              <figure class="project-figure">
+                <img src="image/telco_churn/churn_vs_n.png" alt="churn" style="width:65%; height:auto;">
+                <figcaption>Churn Distribution</figcaption>
+              </figure>
+
+              <li><strong>Method:</strong>
+                <ul>
+                  <li>Exploratory Data Analysis: Identified tenure, billing, and service usage as strong churn drivers</li>
+                  <li>Baseline Model: Logistic Regression used as benchmark</li>
+                  <li>Class Imbalance Handling: Applied class weights and SMOTE oversampling</li>
+                  <li>Tree-based Models: Random Forest, XGBoost, LightGBM for stronger recall–precision trade-off</li>
+                  <li>Evaluation Metrics: Accuracy, Precision, Recall, F1-score (focus on churn class)</li>
+                </ul>
+              </li>
+
+              <li><strong>Results:</strong>
+                <ul>
+                  <li>Logistic Regression: Interpretable baseline but limited recall on churners</li>
+                  <li>Balanced Logistic Regression: Improved recall, but with reduced precision</li>
+                  <li>Random Forest: Delivered the best balance across precision and recall</li>
+                  <li>XGBoost / LightGBM: Strong alternatives with competitive performance</li>
+                </ul>
+              </li>
+
+              <li><strong>Key Takeaways:</strong>
+              <ul>
+                <li>Random Forest provided the most balanced churn prediction, making it suitable for production deployment.</li>
+                <li>High-recall models like XGBoost are valuable when the priority is catching at-risk customers, even at the cost of false positives.</li>
+                <li>Proactive churn management strategies can be informed by these models, enabling retention campaigns focused on high-risk segments.</li>
+              </ul>
+            </li>
           </ul>
 
-        <!-- 인사이트 시각화: 썸네일 3개 그리드 -->
-        <!-- <div class="thumb-grid">
-          <figure>
-            <img src="image/telco_feature_importance.png" alt="Feature importance bar chart" />
-            <figcaption>Top Features (e.g., contract type, monthly charges, tenure)</figcaption>
-          </figure>
-          <figure>
-            <img src="image/telco_churn_by_segment.png" alt="Churn rate by segment plot" />
-            <figcaption>Churn by Segment (e.g., month-to-month vs two-year)</figcaption>
-          </figure>
-          <figure>
-            <img src="image/telco_model_metrics.png" alt="Model comparison table/ROC curves" />
-            <figcaption>Model Comparison (ROC / AUC / Recall)</figcaption>
-          </figure>
-        </div> -->
-
-        <!-- 접었다 펼치는 상세: 데이터/모델링/재현성 -->
           <details class="more">
             <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
-            <div class="cols">
-              <div>
-                <h4>Data & EDA</h4>
-                <ul>
-                  <li>Handled missing values; normalized numeric; encoded categorical (one-hot/ordinal).</li>
-                  <li>Explored churn distribution by service bundle (Fiber, TechSupport, OnlineSecurity).</li>
-                  <li>Created features: <code>tenure_bin</code>, <code>charges_per_service</code>, <code>contract_risk</code>.</li>
-                </ul>
+              <div align="center">
+              | Model               | Accuracy | Precision (Churn) | Recall (Churn) | F1 (Churn) |
+              |---------------------|:--------:|:-----------------:|:--------------:|:----------:|
+              | Logistic Regression | 0.782    | 0.606             | 0.511          | 0.554      |
+              | LogReg (balanced)   | 0.735    | 0.500             | 0.794          | 0.614      |
+              | LogReg + SMOTE      | 0.723    | 0.484             | 0.698          | 0.572      |
+              | Random Forest       | 0.785    | 0.590             | 0.623          | 0.610      |
+              | XGBoost             | 0.756    | 0.529             | 0.725          | 0.612      |
+              | LightGBM            | 0.759    | 0.534             | 0.698          | 0.605      |
               </div>
-              <div>
-                <h4>Modeling & Tuning</h4>
-                <ul>
-                  <li>Baselines (LogReg) → tree models (RF/XGBoost) with randomized/grid search.</li>
-                  <li>Imbalance handling: <code>SMOTE</code>, class weights, threshold optimization for recall.</li>
-                  <li>Metrics: AUC/ROC, Recall@Policy (budget-constrained targeting), PR curve.</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Reproducibility</h4>
-                <ul>
-                  <li>Clear train/validation/test split; random seeds pinned.</li>
-                  <li>Modular scripts/notebooks; requirements pinned in <code>requirements.txt</code>.</li>
-                  <li>Plots saved to <code>assets/</code>; results summary table exported as HTML/PNG.</li>
-                </ul>
-              </div>
-            </div>
+
+              <figure class="project-figure">
+                <img src="image/telco_churn/Baseline_Model_CM.png" alt="LogReg" style="width:65%; height:auto;">
+                <figcaption>Confusion Matrix of Baseline Logistic Regression Model</figcaption>
+              </figure>
+
+              <figure class="project-figure">
+                <img src="image/telco_churn/RandomForest.png" alt="RF" style="width:65%; height:auto;">
+                <figcaption>Confusion Matrix of Random Forest Model</figcaption>
+              </figure>
+
+              <figure class="project-figure">
+                <img src="image/telco_churn/XGBoost.png" alt="XGBoost" style="width:65%; height:auto;">
+                <figcaption>Confusion Matrix of XGBoost Model</figcaption>
+              </figure>
+
+              <figure class="project-figure">
+                <img src="image/telco_churn/LightGBM.png" alt="GBM" style="width:65%; height:auto;">
+                <figcaption>Confusion Matrix of LightGBM Model</figcaption>
+              </figure>
+
           </details>
         </header>
       </section>
