@@ -1,11 +1,11 @@
 <section id="MLprojects">
   <h2>Machine Learning Projects</h2>
     <article class="project-card">
-      <a href="#Movie-Rec">&nbsp;&nbsp;1. Recommendation System with Movielens Dataset</a><br>
-      <a href="#NLP">&nbsp;&nbsp;2. Sentiment Analysis with Amazon Customer Reviews Dataset</a><br>
-      <a href="#Marketing-Campaign">&nbsp;&nbsp;3. A/B Testing with Marketing Campaign Dataset</a><br>
-      <a href="#Churn">&nbsp;&nbsp;4. Customer Churn Prediction with Telco Customer Dataset</a><br>
-      <a href="#SQL">&nbsp;&nbsp;5. Retail E-commerce SQL Analytics</a>
+      &nbsp;&nbsp;<a href="#Movie-Rec">1. Recommendation System with Movielens Dataset</a><br>
+      &nbsp;&nbsp;<a href="#NLP">2. Sentiment Analysis with Amazon Customer Reviews Dataset</a><br>
+      &nbsp;&nbsp;<a href="#Marketing-Campaign">3. A/B Testing with Marketing Campaign Dataset</a><br>
+      &nbsp;&nbsp;<a href="#Churn">4. Customer Churn Prediction with Telco Customer Dataset</a><br>
+      &nbsp;&nbsp;<a href="#SQL">5. Retail E-commerce SQL Analytics</a>
       <br><br>
 <!------------------------------------------------------>
       <!-- PROJECT 1) MOVIELENS 25M RECOMMENDATION -->
@@ -31,7 +31,7 @@
           <br>
           <!-- Pipeline Figure -->
           <figure class="project-figure">
-            <img src="../image/diagram/Movielens25M.drawio.png" 
+            <img src="image/diagram/Movielens25M.drawio.png" 
                 alt="Movie RecSys pipeline: Raw Data → Feature Engineering → MF & Hybrid Ranker → Evaluation"
                 style="width: 100%; height: auto;"  />
             <figcaption>Movie Recommendation System pipeline</figcaption>
@@ -59,7 +59,7 @@
             helping platforms keep recommendations both personalized and timely.
           </p>
           <figure class="project-figure">
-          <img src="../image/movielens-25m-recsys/movielens25m-fig_metrics_mf_vs_hybrid.png" alt="MF vs. Hybrid" style="width:100%; height:auto;">
+          <img src="image/movielens-25m-recsys/movielens25m-fig_metrics_mf_vs_hybrid.png" alt="MF vs. Hybrid" style="width:100%; height:auto;">
           <figcaption>Monthly Revenue Trend</figcaption>
           </figure>
         </header>
@@ -90,7 +90,7 @@
           <br>
           <!-- Pipeline Figure -->
           <figure class="project-figure">
-            <img src="../image/diagram/Amazon Review Sentiment.drawio.png" 
+            <img src="image/diagram/Amazon Review Sentiment.drawio.png" 
                 alt="Sentiment Analysis pipeline: Raw Data → EDA/Preprocessing -> TF-IDF → Model → Evaluation"
                 style="width: 100%; height: auto;"  />
             <figcaption>Sentiment Analysis Pipeline</figcaption>
@@ -104,7 +104,7 @@
               <ul>
                 <li><strong>EDA & Preprocessing:</strong> Explored class distribution, text length, and frequent words (via WordCloud).</li>
                     <figure class="project-figure">
-                    <img src="../image/amazon-reviews-sentiment/WordCloud.png" alt="Positive vs. Negative" style="width:80%; height:auto;">
+                    <img src="image/amazon-reviews-sentiment/WordCloud.png" alt="Positive vs. Negative" style="width:80%; height:auto;">
                     <figcaption>WordCloud of Positive vs. Negative Reviews</figcaption>
                     </figure>
                 <li><strong>Feature Extraction:</strong> Applied TF-IDF to capture word importance.</li>
@@ -115,7 +115,7 @@
             <li><strong>Evaluation:</strong> Compared models using <em>Accuracy</em>, <em>Precision</em>, <em>Recall</em>, <em>F1-score</em>, <em>ROC-AUC</em>, and <em>Average Precision</em>.</li>
             <li><strong>Outcome:</strong> Logistic Regression, Naive Bayes, and Linear SVC delivered strong, reliable baselines for text classification. In contrast, XGBoost underperformed, showing that more complex models are not always superior.</li>
                 <figure class="project-figure">
-                <img src="../image/amazon-reviews-sentiment/ConfusionMatrix_LR_NB.png" alt="CM of LR vs. NB" style="width:100%; height:auto;">
+                <img src="image/amazon-reviews-sentiment/ConfusionMatrix_LR_NB.png" alt="CM of LR vs. NB" style="width:100%; height:auto;">
                 <figcaption>Confusion Matrix of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
                 </figure>
 
@@ -132,19 +132,19 @@
               <h4>Logistic Regression vs. Naive Bayes:</h4>
 
               <figure class="project-figure">
-              <img src="../image/amazon-reviews-sentiment/ROC_AUC_PR_AP.png" alt="LR vs. NB" style="width:80%; height:auto;">
+              <img src="image/amazon-reviews-sentiment/ROC_AUC_PR_AP.png" alt="LR vs. NB" style="width:80%; height:auto;">
               <figcaption>ROC Curve & Precision-Recall Curve of Logistic Regression (LR), Multinomial Naive Bayes (Multi_NB), Complement Naive Bayes (Comp_NB)</figcaption>
               </figure>
 
               <h4>Support Vector Machins (LinearSVC):</h4>
               <figure class="project-figure">
-              <img src="../image/amazon-reviews-sentiment/LinearSVC_ROC_AUC_PR_AP.png" alt="LinearSVC" style="width:80%; height:auto;">
+              <img src="image/amazon-reviews-sentiment/LinearSVC_ROC_AUC_PR_AP.png" alt="LinearSVC" style="width:80%; height:auto;">
               <figcaption>ROC Curve & Precision-Recall Curve of LinearSVC</figcaption>
               </figure>
 
               <h4>Tree-Based Model (XGBoost):</h4>
               <figure class="project-figure">
-              <img src="../image/amazon-reviews-sentiment/XGBoost_ROC_AUC_PR_AP.png" alt="XGBoost" style="width:80%; height:auto;">
+              <img src="image/amazon-reviews-sentiment/XGBoost_ROC_AUC_PR_AP.png" alt="XGBoost" style="width:80%; height:auto;">
               <figcaption>ROC Curve & Precision-Recall Curve of XGBoost</figcaption>
               </figure>            
           </details>
@@ -190,7 +190,7 @@
 
           <!-- Data Figure -->
           <figure class="project-figure">
-            <img src="../image/marketing-campaigns/box_plot_totalspend_response.png" 
+            <img src="image/marketing-campaigns/box_plot_totalspend_response.png" 
                 alt="Comparison"
                 style="width: 50%; height: auto;"  />
             <figcaption>Total Spend by Campaign Response</figcaption>
@@ -249,25 +249,25 @@
             <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
               <h4>Bayesian A/B Testing:</h4>
               <figure class="project-figure">
-              <img src="../image/marketing-campaigns/posterior_distribution_B_over_A.png" alt="B over A" style="width:65%; height:auto;">
+              <img src="image/marketing-campaigns/posterior_distribution_B_over_A.png" alt="B over A" style="width:65%; height:auto;">
               <figcaption>Posterior Distribution of the Difference</figcaption>
               </figure>
 
               <h4>Propensity Score:</h4>
               <figure class="project-figure">
-              <img src="../image/marketing-campaigns/propensity_score_distribution.png" alt="Propensity Score" style="width:80%; height:auto;">
+              <img src="image/marketing-campaigns/propensity_score_distribution.png" alt="Propensity Score" style="width:80%; height:auto;">
               <figcaption>Propensity Score Distribution Before and After Matching</figcaption>
               </figure>
               
               <h4>PSM-SMD:</h4>
               <figure class="project-figure">
-              <img src="../image/marketing-campaigns/covariate_balance_before_after_PSM.png" alt="SMD" style="width:75%; height:auto;">
+              <img src="image/marketing-campaigns/covariate_balance_before_after_PSM.png" alt="SMD" style="width:75%; height:auto;">
               <figcaption>SMD of Covariates Before & After PSM</figcaption>
               </figure>
 
               <h4>PSM-SMD with XGBoost:</h4>
               <figure class="project-figure">
-              <img src="../image/marketing-campaigns/smd_xgboost.png" alt="SMD" style="width:75%; height:auto;">
+              <img src="image/marketing-campaigns/smd_xgboost.png" alt="SMD" style="width:75%; height:auto;">
               <figcaption>SMD of Covariates Before & After PSM with XGBoost</figcaption>
               </figure>
 
@@ -277,7 +277,7 @@
               This highlights which segments benefit from targeting and which should be excluded.
               </p>
               <figure class="project-figure">
-              <img src="../image/marketing-campaigns/predicted_CATE_distribution.png" alt="SMD" style="width:65%; height:auto;">
+              <img src="image/marketing-campaigns/predicted_CATE_distribution.png" alt="SMD" style="width:65%; height:auto;">
               <figcaption>Distribution of Predicted CATE Scores</figcaption>
               </figure>
 
@@ -287,7 +287,7 @@
               Beyond ~60%, returns diminish and performance can fall below random, suggesting optimal targeting thresholds.
               </p>
               <figure class="project-figure">
-              <img src="../image/marketing-campaigns/Uplift_Curve.png" alt="SMD" style="width:65%; height:auto;">
+              <img src="image/marketing-campaigns/Uplift_Curve.png" alt="SMD" style="width:65%; height:auto;">
               <figcaption>Cumulative Uplift Curve</figcaption>
               </figure>
           </details>
@@ -330,7 +330,7 @@
               </li>
 
               <figure class="project-figure">
-                <img src="../image/telco_churn/churn_vs_n.png" alt="churn" style="width:75%; height:auto;">
+                <img src="image/telco_churn/churn_vs_n.png" alt="churn" style="width:75%; height:auto;">
                 <figcaption>Churn Distribution</figcaption>
               </figure>
 
@@ -364,26 +364,26 @@
 
           <details class="more">
             <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
-              <div data-include="../data/telco_results_table.html"></div>
-              <script src="../js/table.js"></script>
+              <div data-include="data/telco_results_table.html"></div>
+              <script src="js/table.js"></script>
 
               <figure class="project-figure">
-                <img src="../image/telco_churn/Baseline_Model_CM.png" alt="LogReg" style="width:90%; height:auto;">
+                <img src="image/telco_churn/Baseline_Model_CM.png" alt="LogReg" style="width:90%; height:auto;">
                 <figcaption>Confusion Matrix of Baseline Logistic Regression Model</figcaption>
               </figure>
 
               <figure class="project-figure">
-                <img src="../image/telco_churn/RandomForest.png" alt="RF" style="width:40%; height:auto;">
+                <img src="image/telco_churn/RandomForest.png" alt="RF" style="width:40%; height:auto;">
                 <figcaption>Confusion Matrix of Random Forest Model</figcaption>
               </figure>
 
               <figure class="project-figure">
-                <img src="../image/telco_churn/XGBoost.png" alt="XGBoost" style="width:40%; height:auto;">
+                <img src="image/telco_churn/XGBoost.png" alt="XGBoost" style="width:40%; height:auto;">
                 <figcaption>Confusion Matrix of XGBoost Model</figcaption>
               </figure>
 
               <figure class="project-figure">
-                <img src="../image/telco_churn/LightGBM.png" alt="GBM" style="width:40%; height:auto;">
+                <img src="image/telco_churn/LightGBM.png" alt="GBM" style="width:40%; height:auto;">
                 <figcaption>Confusion Matrix of LightGBM Model</figcaption>
               </figure>
 
@@ -427,17 +427,17 @@
           <details class="more">
             <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
             <figure class="project-figure">
-              <img src="../image/sql-ecommerce/sql-ecommerce-fig_monthly_revenue.png" alt="Monthly Revenue Trend" style="max-width:450px; width:100%; height:auto;">
+              <img src="image/sql-ecommerce/sql-ecommerce-fig_monthly_revenue.png" alt="Monthly Revenue Trend" style="max-width:450px; width:100%; height:auto;">
               <figcaption>Monthly Revenue Trend</figcaption>
             </figure>
 
             <figure class="project-figure">
-              <img src="../image/sql-ecommerce/sql-ecommerce-fig_new_vs_return.png" alt="New vs Returning Customers" style="max-width:450px; width:100%; height:auto;">
+              <img src="image/sql-ecommerce/sql-ecommerce-fig_new_vs_return.png" alt="New vs Returning Customers" style="max-width:450px; width:100%; height:auto;">
               <figcaption>New vs Returning Customers</figcaption>
             </figure>
 
             <figure class="project-figure">
-              <img src="../image/sql-ecommerce/sql-ecommerce-fig_top_customers.png" alt="Top 10 Customers" style="max-width:450px; width:100%; height:auto;">
+              <img src="image/sql-ecommerce/sql-ecommerce-fig_top_customers.png" alt="Top 10 Customers" style="max-width:450px; width:100%; height:auto;">
               <figcaption>Top 10 Customers</figcaption>
             </figure>
           </details>

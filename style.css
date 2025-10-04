@@ -55,12 +55,12 @@ h3 {
 
 .navbar h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   color: #ffffff;
 }
 
 .navbar .subtitle {
-  margin: 0;
+  margin: 0.3rem;
   font-size: 0.9rem;
   color: #0f042f;
 }
@@ -70,7 +70,7 @@ h3 {
   text-decoration: none;
   color: #0f042f;
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 1.0rem;
 }
 
 /* =========================
