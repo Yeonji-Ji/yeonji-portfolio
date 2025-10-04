@@ -279,10 +279,9 @@ html { scroll-behavior: smooth; }
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: none;
+  border: 1px solid #f20a0a;
   border-radius: 999px;
   background-color: #f9f8f8;
-  border-color: #f20a0a;
   color: #f20a0a;
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
   cursor: pointer;
