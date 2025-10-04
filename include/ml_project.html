@@ -337,7 +337,7 @@
               </li>
 
               <figure class="project-figure">
-                <img src="image/telco_churn/churn_vs_n.png" alt="churn" style="width:65%; height:auto;">
+                <img src="image/telco_churn/churn_vs_n.png" alt="churn" style="width:75%; height:auto;">
                 <figcaption>Churn Distribution</figcaption>
               </figure>
 
@@ -371,34 +371,25 @@
 
           <details class="more">
             <summary><span style="background-color:#C0FFFF">Show Results</span></summary>
-              <div align="center">
-              | Model               | Accuracy | Precision (Churn) | Recall (Churn) | F1 (Churn) |
-              |---------------------|:--------:|:-----------------:|:--------------:|:----------:|
-              | Logistic Regression | 0.782    | 0.606             | 0.511          | 0.554      |
-              | LogReg (balanced)   | 0.735    | 0.500             | 0.794          | 0.614      |
-              | LogReg + SMOTE      | 0.723    | 0.484             | 0.698          | 0.572      |
-              | Random Forest       | 0.785    | 0.590             | 0.623          | 0.610      |
-              | XGBoost             | 0.756    | 0.529             | 0.725          | 0.612      |
-              | LightGBM            | 0.759    | 0.534             | 0.698          | 0.605      |
-              </div>
+              <div data-include="include/telco_results_table.html"></div>
 
               <figure class="project-figure">
-                <img src="image/telco_churn/Baseline_Model_CM.png" alt="LogReg" style="width:65%; height:auto;">
+                <img src="image/telco_churn/Baseline_Model_CM.png" alt="LogReg" style="width:80%; height:auto;">
                 <figcaption>Confusion Matrix of Baseline Logistic Regression Model</figcaption>
               </figure>
 
               <figure class="project-figure">
-                <img src="image/telco_churn/RandomForest.png" alt="RF" style="width:65%; height:auto;">
+                <img src="image/telco_churn/RandomForest.png" alt="RF" style="width:40%; height:auto;">
                 <figcaption>Confusion Matrix of Random Forest Model</figcaption>
               </figure>
 
               <figure class="project-figure">
-                <img src="image/telco_churn/XGBoost.png" alt="XGBoost" style="width:65%; height:auto;">
+                <img src="image/telco_churn/XGBoost.png" alt="XGBoost" style="width:40%; height:auto;">
                 <figcaption>Confusion Matrix of XGBoost Model</figcaption>
               </figure>
 
               <figure class="project-figure">
-                <img src="image/telco_churn/LightGBM.png" alt="GBM" style="width:65%; height:auto;">
+                <img src="image/telco_churn/LightGBM.png" alt="GBM" style="width:40%; height:auto;">
                 <figcaption>Confusion Matrix of LightGBM Model</figcaption>
               </figure>
 
