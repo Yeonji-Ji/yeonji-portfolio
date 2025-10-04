@@ -21,7 +21,8 @@ footer {
 
 h2 {
   text-align: left;
-  font-size: 1.6rem;   /* 1rem = 보통 16px, 따라서 2rem ≈ 32px */
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 6px #abcbf6; /* x, y, blur, color */
 }
 
 h3 {
@@ -281,11 +282,11 @@ html { scroll-behavior: smooth; }
   border: none;
   border-radius: 999px;
   background-color: #f20a0a;
-  color: #ffffff;
+  color: #abcbf6;
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
   cursor: pointer;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
 }
 
