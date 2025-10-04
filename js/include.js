@@ -1,44 +1,46 @@
-// DOMContentLoaded 이벤트가 발생하면 includeHTML 함수를 처음으로 실행합니다.
 document.addEventListener("DOMContentLoaded", function() {
-    includeHTML();
+    // include를 시작하는 함수 호출
+    loadIncludes();
 });
 
-function includeHTML() {
-    // 'data-include' 속성을 가진 모든 요소를 찾습니다.
-    const elements = document.querySelectorAll('[data-include]');
-    
-    // 찾은 요소들을 순회합니다.
-    for (let i = 0; i < elements.length; i++) {
-        const el = elements[i];
-        // 파일 경로를 가져옵니다.
-        const file = el.getAttribute('data-include');
-        
-        if (file) {
-            // fetch를 사용해 파일을 가져옵니다.
-            fetch(file)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Network response was not ok.");
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    // 가져온 데이터(HTML)를 요소의 내부 HTML로 설정합니다.
-                    el.innerHTML = data;
-                    
-                    // 중요: 방금 처리한 요소에서 'data-include' 속성을 제거합니다.
-                    // 이렇게 하지 않으면 무한 반복에 빠질 수 있습니다.
-                    el.removeAttribute('data-include');
-                    
-                    // 중요: 새로운 내용이 추가되었으므로, 그 안에 또 다른 include가 있는지
-                    // 확인하기 위해 함수를 다시 호출합니다 (재귀 호출).
-                    includeHTML();
-                })
-                .catch(error => {
-                    console.error('Error fetching file:', error);
-                    el.innerHTML = "Page not found.";
-                });
-        }
+function loadIncludes() {
+    // 아직 처리되지 않은 첫 번째 data-include 요소를 찾습니다.
+    const el = document.querySelector('[data-include]');
+
+    // 더 이상 처리할 요소가 없으면 함수를 종료합니다. (모든 include가 완료된 시점)
+    if (!el) {
+        return;
+    }
+
+    // include할 파일의 경로를 가져옵니다.
+    const file = el.getAttribute('data-include');
+
+    if (file) {
+        fetch(file)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${file}: ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                // 가져온 HTML 내용을 요소에 삽입합니다.
+                el.innerHTML = data;
+                
+                // 중요: 처리 완료된 요소의 속성을 제거하여 다음번 검색에서 제외시킵니다.
+                el.removeAttribute('data-include');
+                
+                // 중요: 다음 include 요소를 처리하기 위해 함수를 다시 호출합니다.
+                // 이것이 순차적으로 중첩된 include를 가능하게 합니다.
+                loadIncludes();
+            })
+            .catch(error => {
+                console.error('Include Error:', error);
+                el.innerHTML = `Error loading ${file}.`;
+                // 에러가 발생해도 속성을 제거하고 다음으로 넘어가야 무한 루프를 방지할 수 있습니다.
+                el.removeAttribute('data-include');
+                loadIncludes();
+            });
     }
 }
 
