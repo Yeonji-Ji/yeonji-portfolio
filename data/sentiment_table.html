@@ -1,0 +1,78 @@
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; text-align: center; margin: 20px auto; width: 90%;">
+  <thead style="background-color:#f2f2f2;">
+    <tr>
+      <th>Model</th>
+      <th>Accuracy</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1</th>
+      <th>AUC</th>
+      <th>AP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Logistic Regression</td>
+      <td>0.889</td>
+      <td>0.887</td>
+      <td>0.895</td>
+      <td>0.891</td>
+      <td>0.956</td>
+      <td>0.956</td>
+    </tr>
+    <tr>
+      <td>Multinomial Naive Bayes</td>
+      <td>0.858</td>
+      <td>0.859</td>
+      <td>0.861</td>
+      <td>0.860</td>
+      <td>0.935</td>
+      <td>0.935</td>
+    </tr>
+    <tr>
+      <td>Complement Naive Bayes</td>
+      <td>0.858</td>
+      <td>0.862</td>
+      <td>0.856</td>
+      <td>0.859</td>
+      <td>0.935</td>
+      <td>0.935</td>
+    </tr>
+    <tr>
+      <td>LinearSVC</td>
+      <td>0.886</td>
+      <td>0.884</td>
+      <td>0.893</td>
+      <td>0.888</td>
+      <td>0.955</td>
+      <td>0.954</td>
+    </tr>
+    <tr>
+      <td>LinearSVD (GridSearch)</td>
+      <td>0.886</td>
+      <td>0.884</td>
+      <td>0.893</td>
+      <td>0.888</td>
+      <td>0.957</td>
+      <td>0.956</td>
+    </tr>
+    <tr>
+      <td>XGBoost (TF-IDF)</td>
+      <td>0.589</td>
+      <td>0.757</td>
+      <td>0.281</td>
+      <td>0.410</td>
+      <td>0.597</td>
+      <td>0.584</td>
+    </tr>
+    <tr>
+      <td>XGBoost (RandomizeSearch)</td>
+      <td>0.602</td>
+      <td>0.754</td>
+      <td>0.320</td>
+      <td>0.449</td>
+      <td>0.655</td>
+      <td>0.637</td>
+    </tr>
+  </tbody>
+</table>
