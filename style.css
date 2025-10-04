@@ -38,7 +38,7 @@ h3 {
   right: 0;
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #f20a0a;
+  border-bottom: 2px solid #f20a0a;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,12 +93,12 @@ h3 {
 } */
 
 .project-card {
-  border: 1px solid #f20a0a;
+  border: 1px solid #fff;
   border-radius: 14px;
   padding: 1.3rem 1.4rem;
   margin-bottom: 0.5rem;
   background: #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 0 rgba(240, 202, 202, 0.02);
 }
 
 .project-card.highlight {
