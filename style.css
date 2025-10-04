@@ -22,7 +22,7 @@ footer {
 h2 {
   text-align: left;
   font-size: 1.6rem;
-  text-shadow: 2px 2px 6px #abcbf6; /* x, y, blur, color */
+  text-shadow: 2px 2px 0 #abcbf6; /* x, y, blur, color */
 }
 
 h3 {
@@ -281,8 +281,9 @@ html { scroll-behavior: smooth; }
   height: 44px;
   border: none;
   border-radius: 999px;
-  background-color: #f20a0a;
-  color: #abcbf6;
+  background-color: #f9f8f8;
+  border-color: #f20a0a;
+  color: #f20a0a;
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
   cursor: pointer;
   text-decoration: none;
