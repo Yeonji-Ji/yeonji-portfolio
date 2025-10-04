@@ -7,8 +7,8 @@ body {
   padding-top: 100px;
   font-size: 15px;
   line-height: 1.6;
-  /* background-color: #f4f0f9; */
-  background: linear-gradient(to bottom, #c9c9c9, #d7c6eb);
+  background-color: #ffffff;
+  /* background: linear-gradient(to bottom, #c9c9c9, #d7c6eb); */
   color: #0f042f;
 }
 
@@ -37,8 +37,8 @@ h3 {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #e1d1ff;
-  border-bottom: 1px solid #e1d1ff;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f20a0a;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,7 +56,7 @@ h3 {
 .navbar h1 {
   margin: 0;
   font-size: 1.8rem;
-  color: #f6f3ec;
+  color: #ffffff;
 }
 
 .navbar .subtitle {
